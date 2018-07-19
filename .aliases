@@ -7,7 +7,7 @@ source .commands
 # Navigation
 ################################################################################
 
-alias commands="dotfiles_doc_print_all"
+alias cmds="dotfiles_doc_print_all"
 
 ++SECTION "✈ Navigation"
 ++ALIAS ".." "cd .."
@@ -15,6 +15,10 @@ alias commands="dotfiles_doc_print_all"
 ++ALIAS "...." "cd ../../.."
 ++ALIAS "....." "cd ../../../.."
 ++ALIAS "~" "cd ~"
+++ALIAS "l" "ls -lF" "List all files in long format"
+++ALIAS "la" "ls -laF" "List all files in long format, including dot files"
+++ALIAS "lsd" "ls -lF | grep '^d'" "List only directories"
+++ALIAS "path" 'echo -e ${PATH//:/\\n}' "Print each PATH entry on a separate line"
 ++SECTION_END
 
 ++SECTION "✈ Locations"
@@ -28,4 +32,63 @@ alias commands="dotfiles_doc_print_all"
 ++ALIAS "gs" "git status"
 ++ALIAS "gsu" "git submodule update"
 ++ALIAS "gcm" "git commit"
+++SECTION_END
+
+++SECTION "✈ System"
+++ALIAS "week" "date +%V" "Get week number"
+++ALIAS "update" "sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup"
+++ALIAS "cleanup" "find . -type f -name '*.DS_Store' -ls -delete" "Recursively delete '.DS_Store' files"
+
+# Empty the Trash on all mounted volumes and the main HDD.
+# Also, clear Apple’s System Logs to improve shell startup speed.
+# Finally, clear download history from quarantine. https://mths.be/bum
+++ALIAS "emptytrash" "sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+
+# Hide/show all desktop icons (useful when presenting)
+++ALIAS "hidedesktop" "defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+++ALIAS "showdesktop" "defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# Disable/enabled Spotlight
+++ALIAS "spotoff" "sudo mdutil -a -i off" "Disable Spotlight"
+++ALIAS  "spoton" "sudo mdutil -a -i on" "Enable Spotlight"
+
+# Lock the screen
+++ALIAS "afk" "/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend" "Lock the screen"
+
+++ALIAS "reload" "exec ${SHELL} -l" "Reload the shell (i.e. invoke as a login shell)"
+
+++SECTION_END
+
+++SECTION "✈ Networking"
+++ALIAS "ip" "dig +short myip.opendns.com @resolver1.opendns.com" "Show public IP"
+
+# Defined separatly, ++ALIAS cannot render the command correcly
+alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
+++COMMAND "ifactive" "ifconfig | pcregrep -M -o '^[^\\\t:]+:([^\\\n]|\\\n\\\t)*status: active'" "Show active network interfaces"
+++SECTION_END
+
+++SECTION "✈ Tools"
+
+# macOS has no `md5sum`, so use `md5` as a fallback
+command -v md5sum > /dev/null
+++ALIAS "md5sum" "md5"
+
+# macOS has no `sha1sum`, so use `shasum` as a fallback
+command -v sha1sum > /dev/null
+++ALIAS "sha1sum" "shasum"
+
+# URL-encode strings
+++ALIAS "urlencode" 'python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"' "URL-encode strings"
+
+# PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
+++ALIAS "plistbuddy" "/usr/libexec/PlistBuddy"
+
+# Airport CLI alias
+++ALIAS "airport" '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
+
+# One of @janmoesen’s ProTip™s
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+	++ALIAS "${method}" "lwp-request -m '${method}'"
+done
+
 ++SECTION_END

@@ -67,38 +67,43 @@ BIPurple='\033[1;95m'     # Purple
 BICyan='\033[1;96m'       # Cyan
 BIWhite='\033[1;97m'      # White
 
+# Version
+SCRIPT_VERSION=$IBlue"v0.1."$(git rev-parse HEAD | cut -c1-10)" (alpha)"$Color_Off
+
 function dotfiles_doc_print_all() {
   is_printf_allowed=1
-  echo "   ___                                          _          "
-  echo "  / __\___  _ __ ___  _ __ ___   __ _ _ __   __| |___      "
-  echo " / /  / _ \| '_ \` _ \| '_ \` _ \ / _\` | '_ \ / _\` / __| "
-  echo "/ /__| (_) | | | | | | | | | | | (_| | | | | (_| \__ \     "
-  echo "\____/\___/|_| |_| |_|_| |_| |_|\__,_|_| |_|\__,_|___/     "
-  git log --pretty=format:'%h' -n 1
+  __echo $SCRIPT_VERSION
   source .aliases
   unset -v is_printf_allowed
 }
 
 function ++ALIAS() {
   alias $1=$2
-  ++COMMAND $1 $2 $3
+  ++COMMAND $1 $2 $3 $4
 }
 
 function ++SECTION() {
-  text="[ "$1" ]"
-  __printf ""
-  __printf $text
+  text=$Green"[ "$1" ]"$Color_Off
+  __echo ""
+  __echo $text
 }
 
 function ++SECTION_END() {
 }
 
 function ++COMMAND() {
-  text=$BBlue$1$Color_Off" → "$2$Color_Off$BBlue"   \t"$3$Color_Off
-  __printf $text
+  c1=$BBlue$1$Color_Off
+  c2=" → "$2$Color_Off
+  if [ -z $3 ]; then
+    c3=""
+  else
+    c3="  \t"$BBlue"# "$3$Color_Off
+  fi
+  text=$c1$c2$c3
+  __echo $text
 }
 
-function __printf() {
+function __echo() {
   if [ -z ${is_printf_allowed+x} ]; then
   else
     echo $1
