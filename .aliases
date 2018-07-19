@@ -35,6 +35,7 @@ alias cmds="dotfiles_doc_print_all"
 ++ALIAS "gcmm" "git commit -m"
 ++ALIAS "gd" "git diff"
 ++ALIAS "gdc" "git diff --cached"
+++ALIAS "gp" "git push"
 ++SECTION_END
 
 ++SECTION "System"
