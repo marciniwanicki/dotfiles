@@ -1,0 +1,31 @@
+
+#!/usr/bin/env zsh
+
+source .commands
+
+################################################################################
+# Navigation
+################################################################################
+
+alias commands="dotfiles_doc_print_all"
+
+++SECTION "✈ Navigation"
+++ALIAS ".." "cd .."
+++ALIAS "..." "cd ../.."
+++ALIAS "...." "cd ../../.."
+++ALIAS "....." "cd ../../../.."
+++ALIAS "~" "cd ~"
+++SECTION_END
+
+++SECTION "✈ Locations"
+++ALIAS "p" "cd ~/Projects"
+++ALIAS "dl" "cd ~/Downloads"
+++ALIAS "dt" "cd ~/Desktop"
+++SECTION_END
+
+++SECTION "✈ Git"
+++ALIAS "g" "git"
+++ALIAS "gs" "git status"
+++ALIAS "gsu" "git submodule update"
+++ALIAS "gcm" "git commit"
+++SECTION_END
