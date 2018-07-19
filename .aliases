@@ -9,7 +9,7 @@ source .commands
 
 alias cmds="dotfiles_doc_print_all"
 
-++SECTION "✈ Navigation"
+++SECTION "Navigation"
 ++ALIAS ".." "cd .."
 ++ALIAS "..." "cd ../.."
 ++ALIAS "...." "cd ../../.."
@@ -21,20 +21,21 @@ alias cmds="dotfiles_doc_print_all"
 ++ALIAS "path" 'echo -e ${PATH//:/\\n}' "Print each PATH entry on a separate line"
 ++SECTION_END
 
-++SECTION "✈ Locations"
+++SECTION "Locations"
 ++ALIAS "p" "cd ~/Projects"
 ++ALIAS "dl" "cd ~/Downloads"
 ++ALIAS "dt" "cd ~/Desktop"
 ++SECTION_END
 
-++SECTION "✈ Git"
+++SECTION "Git"
 ++ALIAS "g" "git"
 ++ALIAS "gs" "git status"
 ++ALIAS "gsu" "git submodule update"
 ++ALIAS "gcm" "git commit"
+++ALIAS "gcmm" "git commit -m"
 ++SECTION_END
 
-++SECTION "✈ System"
+++SECTION "System"
 ++ALIAS "week" "date +%V" "Get week number"
 ++ALIAS "update" "sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup"
 ++ALIAS "cleanup" "find . -type f -name '*.DS_Store' -ls -delete" "Recursively delete '.DS_Store' files"
@@ -59,7 +60,7 @@ alias cmds="dotfiles_doc_print_all"
 
 ++SECTION_END
 
-++SECTION "✈ Networking"
+++SECTION "Networking"
 ++ALIAS "ip" "dig +short myip.opendns.com @resolver1.opendns.com" "Show public IP"
 
 # Defined separatly, ++ALIAS cannot render the command correcly
@@ -67,7 +68,7 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 ++COMMAND "ifactive" "ifconfig | pcregrep -M -o '^[^\\\t:]+:([^\\\n]|\\\n\\\t)*status: active'" "Show active network interfaces"
 ++SECTION_END
 
-++SECTION "✈ Tools"
+++SECTION "Tools"
 
 # macOS has no `md5sum`, so use `md5` as a fallback
 command -v md5sum > /dev/null

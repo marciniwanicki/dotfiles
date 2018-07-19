@@ -68,12 +68,13 @@ BICyan='\033[1;96m'       # Cyan
 BIWhite='\033[1;97m'      # White
 
 # Version
-SCRIPT_VERSION=$IBlue"v0.1."$(git rev-parse HEAD | cut -c1-10)" (alpha)"$Color_Off
+SCRIPT_VERSION=$IBlue"\U0001F680 v0.1."$(git rev-parse HEAD | cut -c1-10)$Color_Off
 
 function dotfiles_doc_print_all() {
   is_printf_allowed=1
   __echo $SCRIPT_VERSION
   source .aliases
+  __echo "\n"
   unset -v is_printf_allowed
 }
 
@@ -83,7 +84,7 @@ function ++ALIAS() {
 }
 
 function ++SECTION() {
-  text=$Green"[ "$1" ]"$Color_Off
+  text=$Green"\U000025C0 "$1" \U000025B6"$Color_Off
   __echo ""
   __echo $text
 }
