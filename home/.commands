@@ -67,14 +67,10 @@ BIPurple='\033[1;95m'     # Purple
 BICyan='\033[1;96m'       # Cyan
 BIWhite='\033[1;97m'      # White
 
-# Version
-SCRIPT_VERSION=$IBlue"\U0001F680 v0.1."$(git rev-parse HEAD | cut -c1-10)$Color_Off
-
 function dotfiles_doc_print_all() {
   echo_on=1
-  .echo $SCRIPT_VERSION
-  source .aliases
-  source .functions
+  source $HOME/.dotfiles/home/.aliases
+  source $HOME/.dotfiles/home/.functions
   .echo "\n"
   unset -v echo_on
 }

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source .commands
+source $HOME/.dotfiles/home/.commands
 
 .section "Functions"
 .function "mkd" "Create a new directory and enter it"
