@@ -134,7 +134,7 @@ function clone() {
   git clone git@bitbucket.org:marciniwanicki/dotfiles.git
   cd dotfiles/bin
   setup()
-  cd ~
+  cd $HOME
   rm -rf /tmp/$id
 }
 
