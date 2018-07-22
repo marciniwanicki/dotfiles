@@ -113,33 +113,38 @@ function install_or_rather_brew() {
   ./brew.sh
 }
 
+function launch_zsh() {
+  env zsh -l
+}
+
 function setup() {
   uninstall
   prepare_dir
   install_homebrew
   install_oh_my_zsh
-  install_or_rather_brew
-
-  env zsh -l
+  # install_or_rather_brew
 }
 
 function clone() {
   # sh -c "$(curl -fsSL https://bitbucket.org/marciniwanicki/dotfiles/raw/master/bin/install.sh)"
-  #
   id=$(uuidgen)
   cd /tmp
   mkdir $id
   cd $id
   git clone git@bitbucket.org:marciniwanicki/dotfiles.git
   cd dotfiles/bin
-  echo "DONE!"
+  setup()
+  cd ~
+  rm -rf /tmp/$id
 }
 
 function main() {
   if git rev-parse --git-dir > /dev/null 2>&1; then
     setup
+    launch_zsh
   else
     clone
+    launch_zsh
   fi
 }
 
