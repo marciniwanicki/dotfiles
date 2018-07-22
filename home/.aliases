@@ -31,6 +31,7 @@ alias cmds="dotfiles_doc_print_all"
 .alias "gd" "git diff"
 .alias "gdc" "git diff --cached"
 .alias "gp" "git push"
+.alias "gr" "git reset"
 .alias "glog" "git log --graph --decorate"
 .alias "glog1" "git log --graph --decorate --oneline"
 .section_end
