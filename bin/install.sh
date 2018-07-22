@@ -124,7 +124,15 @@ function setup() {
 }
 
 function clone() {
-  echo "Not implemented yet"
+  # sh -c "$(curl -fsSL https://bitbucket.org/marciniwanicki/dotfiles/raw/master/bin/install.sh)"
+  #
+  id=$(uuidgen)
+  cd /tmp
+  mkdir $id
+  cd $id
+  git clone git@bitbucket.org:marciniwanicki/dotfiles.git
+  cd dotfiles/bin
+  echo "DONE!"
 }
 
 function main() {
