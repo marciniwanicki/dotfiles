@@ -1,12 +1,21 @@
 #!/usr/bin/env bash
 
-function clean_up() {
-  ./clean.sh 2> /dev/null
+function uninstall() {
+  ./uninstall.sh 2> /dev/null
 }
 
 function prepare_dir() {
   mkdir ~/.dotfiles
   cp -r ../home ~/.dotfiles/home
+
+  touch ~/.dotfiles/.version
+  echo $(git rev-parse --verify HEAD) > ~/.dotfiles/.version
+
+  mkdir ~/.dotfiles/bin
+  cp uninstall.sh ~/.dotfiles/bin/uninstall.sh
+
+  cp ../LICENSE ~/.dotfiles/LICENSE
+  cp ../README.md ~/.dotfiles/README.md
 }
 
 function install_homebrew() {
@@ -98,15 +107,32 @@ function install_oh_my_zsh {
   done;
 
   echo 'Oh My Zsh is now installed'
+}
+
+function install_or_rather_brew() {
+  ./brew.sh
+}
+
+function setup() {
+  uninstall
+  prepare_dir
+  install_homebrew
+  install_oh_my_zsh
+  install_or_rather_brew
 
   env zsh -l
 }
 
+function clone() {
+  echo "Not implemented yet"
+}
+
 function main() {
-  clean_up
-  prepare_dir
-  install_homebrew
-  install_oh_my_zsh
+  if git rev-parse --git-dir > /dev/null 2>&1; then
+    setup
+  else
+    clone
+  fi
 }
 
 main
