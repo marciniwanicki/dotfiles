@@ -2,7 +2,7 @@
 
 # Zsh
 export ZSH="$HOME/.dotfiles/oh-my-zsh";
-export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height 40% | cut -c 10-"
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height 30%"
 
 # Make vim the default editor.
 export EDITOR='vim';
