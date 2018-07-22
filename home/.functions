@@ -166,12 +166,12 @@ function tre() {
 
 .function "hi" "Search history"
 hi() {
-    history | fzf --reverse --height 40% | cut -c 8-
+    history | fzf
 }
 
-.function "gci" "Git checkout branch"
-gci() {
-    git checkout $(git branch --all | fzf --reverse | sed -e "s/remotes\/origin\///")
+.function "gcoi" "Git checkout branch"
+gcoi() {
+    git checkout $(git branch --all | fzf | sed -e "s/remotes\/origin\///")
 }
 
 .section_end

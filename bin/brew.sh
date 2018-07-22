@@ -84,6 +84,13 @@ brew install tree
 brew install vbindiff
 brew install zopfli
 
+# Fzf (hacky :/)
+brew install fzf
+echo "Y Y Y" | /usr/local/opt/fzf/install
+rm ~/.fzf.bash
+mv ~/.fzf.zsh ~/.dotfiles/home/.fzf.zsh
+ln -s ~/.dotfiles/home/.fzf.zsh ~/.fzf.zsh
+
 # Ruby
 gem install bundler
 
