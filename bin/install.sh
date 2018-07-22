@@ -122,7 +122,7 @@ function setup() {
   prepare_dir
   install_homebrew
   install_oh_my_zsh
-  # install_or_rather_brew
+  install_or_rather_brew
 }
 
 function clone() {

@@ -159,3 +159,19 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# ------------------------------------------------------------------------------
+# fzf
+# ------------------------------------------------------------------------------
+
+.function "hi" "Search history"
+hi() {
+    history | fzf --reverse --height 40% | cut -c 8-
+}
+
+.function "gci" "Git checkout branch"
+gci() {
+    git checkout $(git branch --all | fzf --reverse | sed -e "s/remotes\/origin\///")
+}
+
+.section_end
