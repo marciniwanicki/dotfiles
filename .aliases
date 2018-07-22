@@ -1,100 +1,95 @@
-
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 source .commands
 
-################################################################################
-# Navigation
-################################################################################
-
 alias cmds="dotfiles_doc_print_all"
 
-++SECTION "Navigation"
-++ALIAS ".." "cd .."
-++ALIAS "..." "cd ../.."
-++ALIAS "...." "cd ../../.."
-++ALIAS "....." "cd ../../../.."
-++ALIAS "~" "cd ~"
-++ALIAS "l" "ls -lF" "List all files in long format"
-++ALIAS "la" "ls -laF" "List all files in long format, including dot files"
-++ALIAS "lsd" "ls -lF | grep '^d'" "List only directories"
-++ALIAS "path" 'echo -e ${PATH//:/\\n}' "Print each PATH entry on a separate line"
-++SECTION_END
+.section "Navigation"
+.alias ".." "cd .."
+.alias "..." "cd ../.."
+.alias "...." "cd ../../.."
+.alias "....." "cd ../../../.."
+.alias "~" "cd ~"
+.alias "l" "ls -lF" "List all files in long format"
+.alias "la" "ls -laF" "List all files in long format, including dot files"
+.alias "lsd" "ls -lF | grep '^d'" "List only directories"
+.alias "path" 'echo -e ${PATH//:/\\n}' "Print each PATH entry on a separate line"
+.section_end
 
-++SECTION "Locations"
-++ALIAS "p" "cd ~/Projects"
-++ALIAS "dl" "cd ~/Downloads"
-++ALIAS "dt" "cd ~/Desktop"
-++SECTION_END
+.section "Locations"
+.alias "p" "cd ~/Projects"
+.alias "dl" "cd ~/Downloads"
+.alias "dt" "cd ~/Desktop"
+.section_end
 
-++SECTION "Git"
-++ALIAS "g" "git"
-++ALIAS "gs" "git status"
-++ALIAS "gsu" "git submodule update"
-++ALIAS "gcm" "git commit"
-++ALIAS "gcmm" "git commit -m"
-++ALIAS "gd" "git diff"
-++ALIAS "gdc" "git diff --cached"
-++ALIAS "gp" "git push"
-++ALIAS "glog" "git log --graph --decorate"
-++ALIAS "glog1" "git log --graph --decorate --oneline"
-++SECTION_END
+.section "Git"
+.alias "g" "git"
+.alias "gs" "git status"
+.alias "gsu" "git submodule update"
+.alias "gcm" "git commit"
+.alias "gcmm" "git commit -m"
+.alias "gd" "git diff"
+.alias "gdc" "git diff --cached"
+.alias "gp" "git push"
+.alias "glog" "git log --graph --decorate"
+.alias "glog1" "git log --graph --decorate --oneline"
+.section_end
 
-++SECTION "System"
-++ALIAS "week" "date +%V" "Get week number"
-++ALIAS "update" "sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup"
-++ALIAS "cleanup" "find . -type f -name '*.DS_Store' -ls -delete" "Recursively delete '.DS_Store' files"
+.section "System"
+.alias "week" "date +%V" "Get week number"
+.alias "update" "sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup"
+.alias "cleanup" "find . -type f -name '*.DS_Store' -ls -delete" "Recursively delete '.DS_Store' files"
 
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.
 # Finally, clear download history from quarantine. https://mths.be/bum
-++ALIAS "emptytrash" "sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+.alias "emptytrash" "sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
 # Hide/show all desktop icons (useful when presenting)
-++ALIAS "hidedesktop" "defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-++ALIAS "showdesktop" "defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+.alias "hidedesktop" "defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+.alias "showdesktop" "defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 # Disable/enabled Spotlight
-++ALIAS "spotoff" "sudo mdutil -a -i off" "Disable Spotlight"
-++ALIAS  "spoton" "sudo mdutil -a -i on" "Enable Spotlight"
+.alias "spotoff" "sudo mdutil -a -i off" "Disable Spotlight"
+.alias  "spoton" "sudo mdutil -a -i on" "Enable Spotlight"
 
 # Lock the screen
-++ALIAS "afk" "/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend" "Lock the screen"
+.alias "afk" "/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend" "Lock the screen"
 
-++ALIAS "reload" "exec ${SHELL} -l" "Reload the shell (i.e. invoke as a login shell)"
+.alias "reload" "exec ${SHELL} -l" "Reload the shell (i.e. invoke as a login shell)"
 
-++SECTION_END
+.section_end
 
-++SECTION "Networking"
-++ALIAS "ip" "dig +short myip.opendns.com @resolver1.opendns.com" "Show public IP"
+.section "Networking"
+.alias "ip" "dig +short myip.opendns.com @resolver1.opendns.com" "Show public IP"
 
-# Defined separatly, ++ALIAS cannot render the command correcly
+# Defined separatly, .alias cannot render the command correcly
 alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'"
-++COMMAND "ifactive" "ifconfig | pcregrep -M -o '^[^\\\t:]+:([^\\\n]|\\\n\\\t)*status: active'" "Show active network interfaces"
-++SECTION_END
+.command "ifactive" "ifconfig | pcregrep -M -o '^[^\\\t:]+:([^\\\n]|\\\n\\\t)*status: active'" "Show active network interfaces"
+.section_end
 
-++SECTION "Tools"
+.section "Tools"
 
 # macOS has no `md5sum`, so use `md5` as a fallback
 command -v md5sum > /dev/null
-++ALIAS "md5sum" "md5"
+.alias "md5sum" "md5"
 
 # macOS has no `sha1sum`, so use `shasum` as a fallback
 command -v sha1sum > /dev/null
-++ALIAS "sha1sum" "shasum"
+.alias "sha1sum" "shasum"
 
 # URL-encode strings
-++ALIAS "urlencode" 'python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"' "URL-encode strings"
+.alias "urlencode" 'python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"' "URL-encode strings"
 
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
-++ALIAS "plistbuddy" "/usr/libexec/PlistBuddy"
+.alias "plistbuddy" "/usr/libexec/PlistBuddy"
 
 # Airport CLI alias
-++ALIAS "airport" '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
+.alias "airport" '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
 
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
-	++ALIAS "${method}" "lwp-request -m '${method}'"
+	.alias "${method}" "lwp-request -m '${method}'"
 done
 
-++SECTION_END
+.section_end

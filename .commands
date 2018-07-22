@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 ################################################################################
 # Functions used to document the behaviours
@@ -71,28 +71,36 @@ BIWhite='\033[1;97m'      # White
 SCRIPT_VERSION=$IBlue"\U0001F680 v0.1."$(git rev-parse HEAD | cut -c1-10)$Color_Off
 
 function dotfiles_doc_print_all() {
-  is_printf_allowed=1
-  __echo $SCRIPT_VERSION
+  echo_on=1
+  .echo $SCRIPT_VERSION
   source .aliases
-  __echo "\n"
-  unset -v is_printf_allowed
+  source .functions
+  .echo "\n"
+  unset -v echo_on
 }
 
-function ++ALIAS() {
+function .alias() {
   alias $1=$2
-  ++COMMAND $1 $2 $3 $4
+  .command $1 $2 $3 $4
 }
 
-function ++SECTION() {
+function .section() {
   text=$Green"\U000025C0 "$1" \U000025B6"$Color_Off
-  __echo ""
-  __echo $text
+  .echo ""
+  .echo $text
 }
 
-function ++SECTION_END() {
+function .section_end() {
 }
 
-function ++COMMAND() {
+function .function() {
+  c1=$BBlue$1$Color_Off
+  c2=" → "$2$Color_Off
+  text=$c1$c2
+  .echo $text
+}
+
+function .command() {
   c1=$BBlue$1$Color_Off
   c2=" → "$2$Color_Off
   if [ -z $3 ]; then
@@ -101,11 +109,11 @@ function ++COMMAND() {
     c3="  \t"$BBlue"# "$3$Color_Off
   fi
   text=$c1$c2$c3
-  __echo $text
+  .echo $text
 }
 
-function __echo() {
-  if [ -z ${is_printf_allowed+x} ]; then
+function .echo() {
+  if [ -z ${echo_on+x} ]; then
   else
     echo $1
   fi
