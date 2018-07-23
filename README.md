@@ -13,5 +13,11 @@ new shell tricks.
 - Mathias Bynens - https://github.com/mathiasbynens/dotfiles (most of .aliases
   and brew.sh lines are coming from his repository)
 
+## How to install
+
+```bash
+sh -c "$(curl -fsSL https://bitbucket.org/marciniwanicki/dotfiles/raw/master/bin/install.sh)"
+```
+
 ## License
 All files in this repository are released under the MIT license. [See LICENSE](https://github.com/marciniwanicki/dotfiles/blob/develop/LICENSE) for details.
