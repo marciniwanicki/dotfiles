@@ -1,7 +1,5 @@
 #!/usr/bin/env sh
 
-source .common
-
 function uninstall() {
   if [ -d "$HOME/.dotfiles" ]; then
       cd ~/.dotfiles/bin
@@ -114,6 +112,7 @@ function launch_zsh() {
 }
 
 function setup() {
+  source .common
   install_homebrew
   install_oh_my_zsh
   install_or_rather_brew
