@@ -14,4 +14,4 @@ done;
 rm -rf ~/.dotfiles
 rm -rf ~/.zshrc
 
-.print ".dotfiles have been uninstalled"
+print ".dotfiles have been uninstalled"

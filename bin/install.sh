@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env sh
 
 source .common
 
@@ -20,13 +20,13 @@ function install_oh_my_zsh {
   set -e
 
   if ! command -v zsh >/dev/null 2>&1; then
-    .error "Zsh is not installed! Please install zsh first!"
+    error "Zsh is not installed! Please install zsh first!"
     exit
   fi
 
   if [ -d "$ZSH" ]; then
-    .error "You already have Oh My Zsh installed."
-    .error "You'll need to remove $ZSH if you want to re-install."
+    error "You already have Oh My Zsh installed."
+    error "You'll need to remove $ZSH if you want to re-install."
     exit
   fi
 
@@ -37,32 +37,32 @@ function install_oh_my_zsh {
   # precedence over umasks except for filesystems mounted with option "noacl".
   umask g-w,o-w
 
-  .print "Cloning Oh My Zsh..."
+  print "Cloning Oh My Zsh..."
   command -v git >/dev/null 2>&1 || {
-    .error "git is not installed"
+    error "git is not installed"
     exit 1
   }
   # The Windows (MSYS) Git is not compatible with normal use on cygwin
   if [ "$OSTYPE" = cygwin ]; then
     if git --version | grep msysgit > /dev/null; then
-      .error "Windows/MSYS Git is not supported on Cygwin"
-      .error "Make sure the Cygwin git package is installed and is first on the path"
+      error "Windows/MSYS Git is not supported on Cygwin"
+      error "Make sure the Cygwin git package is installed and is first on the path"
       exit 1
     fi
   fi
   env git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git "$ZSH" || {
-    .error "git clone of oh-my-zsh repo failed\n"
+    error "git clone of oh-my-zsh repo failed\n"
     exit 1
   }
 
 
-  .print "Looking for an existing zsh config..."
+  print "Looking for an existing zsh config..."
   if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then
-    .print "Found ~/.zshrc.Backing up to ~/.zshrc.pre-oh-my-zsh";
+    print "Found ~/.zshrc.Backing up to ~/.zshrc.pre-oh-my-zsh";
     mv ~/.zshrc ~/.zshrc.pre-oh-my-zsh;
   fi
 
-  .print "Using the Oh My Zsh template file and adding it to ~/.zshrc"
+  print "Using the Oh My Zsh template file and adding it to ~/.zshrc"
   cp "$ZSH"/templates/zshrc.zsh-template ~/.dotfiles/home/.zshrc
   sed "/^export ZSH=/ c\\
   export ZSH=\"$ZSH\"
@@ -79,12 +79,12 @@ function install_oh_my_zsh {
   if [ "$TEST_CURRENT_SHELL" != "zsh" ]; then
     # If this platform provides a "chsh" command (not Cygwin), do it, man!
     if hash chsh >/dev/null 2>&1; then
-      .print "Time to change your default shell to zsh!\n"
+      print "Time to change your default shell to zsh!\n"
       chsh -s $(grep /zsh$ /etc/shells | tail -1)
     # Else, suggest the user do so manually.
     else
-      .print "I can't change your shell automatically because this system does not have chsh.\n"
-      .print "Please manually change your default shell to zsh!\n"
+      print "I can't change your shell automatically because this system does not have chsh.\n"
+      print "Please manually change your default shell to zsh!\n"
     fi
   fi
 
@@ -96,11 +96,11 @@ function install_oh_my_zsh {
     ln -s $file $HOME/$(basename $file)
   done;
 
-  .print 'Oh My Zsh is now installed'
+  print 'Oh My Zsh is now installed'
 }
 
 function install_or_rather_brew() {
-  read "REPLY?Do you want to brew some great programs? "
+  read -p "Do you want to brew some great programs? " $REPLY
   if [[ $REPLY =~ ^[Yy]$ ]]
   then
     ./brew.sh
@@ -108,7 +108,7 @@ function install_or_rather_brew() {
 }
 
 function launch_zsh() {
-  .print "Launching zsh..."
+  print "Launching zsh..."
   env zsh -l
 }
 
@@ -131,7 +131,7 @@ function copy() {
 }
 
 function main() {
-  .print "Started .dotfiles installation"
+  print "Started .dotfiles installation"
   uninstall
   if git rev-parse --git-dir > /dev/null 2>&1; then
     copy
