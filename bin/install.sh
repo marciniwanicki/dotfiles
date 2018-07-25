@@ -113,6 +113,7 @@ function launch_zsh() {
 
 function setup() {
   source .common
+  cd ~/.dotfiles/bin
   install_homebrew
   install_oh_my_zsh
   install_or_rather_brew
@@ -121,7 +122,6 @@ function setup() {
 function clone() {
   # sh -c "$(curl -fsSL https://bitbucket.org/marciniwanicki/dotfiles/raw/master/bin/install.sh)"
   git clone git@bitbucket.org:marciniwanicki/dotfiles.git ~/.dotfiles
-  cd ~/dotfiles/bin
 }
 
 function copy() {
