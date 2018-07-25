@@ -71,7 +71,7 @@ function .echo_version() {
   cd ~/.dotfiles/bin
   local hash=$(git rev-parse --short HEAD)
   local date=$(git log -1 --format=%cd)
-  .echo $Green"[ \U0001F680 ] .dotfiles v0.1."$hash" ("$date")
+  .echo $Green"[ \U0001F680 ] .dotfiles v0.1."$hash" ("$date")"
 }
 
 function .dotfiles_doc_print_all() {
