@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+function .print() {
+    echo "\033[0;32m[ \U000026A1 ] $1 \033[0m"
+}
+
+function .error() {
+    echo "\033[0;31m[ \U000026D4 ] Error: $1 \033[0m"
+}

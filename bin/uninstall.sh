@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+source .common
+
 # Uninstall oh-my-zsh_history
 uninstall_oh_my_zsh 2> /dev/null
 
@@ -11,3 +13,5 @@ done;
 # Remove old .dotfiles
 rm -rf ~/.dotfiles
 rm -rf ~/.zshrc
+
+.print ".dotfiles have been uninstalled"

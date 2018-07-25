@@ -1,21 +1,11 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
+
+source .common
 
 function uninstall() {
-  ./uninstall.sh 2> /dev/null
-}
-
-function prepare_dir() {
-  mkdir ~/.dotfiles
-  cp -r ../home ~/.dotfiles/home
-
-  touch ~/.dotfiles/.version
-  echo $(git rev-parse --verify HEAD) > ~/.dotfiles/.version
-
-  mkdir ~/.dotfiles/bin
-  cp uninstall.sh ~/.dotfiles/bin/uninstall.sh
-
-  cp ../LICENSE ~/.dotfiles/LICENSE
-  cp ../README.md ~/.dotfiles/README.md
+  if [ -d "$HOME/.dotfiles" ]; then
+      ./uninstall.sh 2> /dev/null
+  fi
 }
 
 function install_homebrew() {
@@ -30,13 +20,13 @@ function install_oh_my_zsh {
   set -e
 
   if ! command -v zsh >/dev/null 2>&1; then
-    printf "Zsh is not installed! Please install zsh first!\n"
+    .error "Zsh is not installed! Please install zsh first!"
     exit
   fi
 
   if [ -d "$ZSH" ]; then
-    printf "You already have Oh My Zsh installed.\n"
-    printf "You'll need to remove $ZSH if you want to re-install.\n"
+    .error "You already have Oh My Zsh installed."
+    .error "You'll need to remove $ZSH if you want to re-install."
     exit
   fi
 
@@ -47,32 +37,32 @@ function install_oh_my_zsh {
   # precedence over umasks except for filesystems mounted with option "noacl".
   umask g-w,o-w
 
-  printf "Cloning Oh My Zsh...\n"
+  .print "Cloning Oh My Zsh..."
   command -v git >/dev/null 2>&1 || {
-    echo "Error: git is not installed"
+    .error "git is not installed"
     exit 1
   }
   # The Windows (MSYS) Git is not compatible with normal use on cygwin
   if [ "$OSTYPE" = cygwin ]; then
     if git --version | grep msysgit > /dev/null; then
-      echo "Error: Windows/MSYS Git is not supported on Cygwin"
-      echo "Error: Make sure the Cygwin git package is installed and is first on the path"
+      .error "Windows/MSYS Git is not supported on Cygwin"
+      .error "Make sure the Cygwin git package is installed and is first on the path"
       exit 1
     fi
   fi
   env git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git "$ZSH" || {
-    printf "Error: git clone of oh-my-zsh repo failed\n"
+    .error "git clone of oh-my-zsh repo failed\n"
     exit 1
   }
 
 
-  printf "Looking for an existing zsh config...\n"
+  .print "Looking for an existing zsh config..."
   if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then
-    printf "Found ~/.zshrc.Backing up to ~/.zshrc.pre-oh-my-zsh\n";
+    .print "Found ~/.zshrc.Backing up to ~/.zshrc.pre-oh-my-zsh";
     mv ~/.zshrc ~/.zshrc.pre-oh-my-zsh;
   fi
 
-  printf "Using the Oh My Zsh template file and adding it to ~/.zshrc\n"
+  .print "Using the Oh My Zsh template file and adding it to ~/.zshrc"
   cp "$ZSH"/templates/zshrc.zsh-template ~/.dotfiles/home/.zshrc
   sed "/^export ZSH=/ c\\
   export ZSH=\"$ZSH\"
@@ -89,12 +79,12 @@ function install_oh_my_zsh {
   if [ "$TEST_CURRENT_SHELL" != "zsh" ]; then
     # If this platform provides a "chsh" command (not Cygwin), do it, man!
     if hash chsh >/dev/null 2>&1; then
-      printf "Time to change your default shell to zsh!\n"
+      .print "Time to change your default shell to zsh!\n"
       chsh -s $(grep /zsh$ /etc/shells | tail -1)
     # Else, suggest the user do so manually.
     else
-      printf "I can't change your shell automatically because this system does not have chsh.\n"
-      printf "Please manually change your default shell to zsh!\n"
+      .print "I can't change your shell automatically because this system does not have chsh.\n"
+      .print "Please manually change your default shell to zsh!\n"
     fi
   fi
 
@@ -106,20 +96,23 @@ function install_oh_my_zsh {
     ln -s $file $HOME/$(basename $file)
   done;
 
-  echo 'Oh My Zsh is now installed'
+  .print 'Oh My Zsh is now installed'
 }
 
 function install_or_rather_brew() {
-  ./brew.sh
+  read "REPLY?Do you want to brew some great programs? "
+  if [[ $REPLY =~ ^[Yy]$ ]]
+  then
+    ./brew.sh
+  fi
 }
 
 function launch_zsh() {
+  .print "Launching zsh..."
   env zsh -l
 }
 
 function setup() {
-  uninstall
-  prepare_dir
   install_homebrew
   install_oh_my_zsh
   install_or_rather_brew
@@ -127,25 +120,26 @@ function setup() {
 
 function clone() {
   # sh -c "$(curl -fsSL https://bitbucket.org/marciniwanicki/dotfiles/raw/master/bin/install.sh)"
-  id=$(uuidgen)
-  cd /tmp
-  mkdir $id
-  cd $id
-  git clone git@bitbucket.org:marciniwanicki/dotfiles.git
-  cd dotfiles/bin
-  setup
-  cd $HOME
-  rm -rf /tmp/$id
+  git clone git@bitbucket.org:marciniwanicki/dotfiles.git ~/.dotfiles
+  cd ~/dotfiles/bin
+}
+
+function copy() {
+  rm -rf ~/.dotfiles 2> /dev/null
+  mkdir ~/.dotfiles
+  cp -r .. ~/.dotfiles/
 }
 
 function main() {
+  .print "Started .dotfiles installation"
+  uninstall
   if git rev-parse --git-dir > /dev/null 2>&1; then
-    setup
-    launch_zsh
+    copy
   else
     clone
-    launch_zsh
   fi
+  setup
+  launch_zsh
 }
 
 main
