@@ -67,8 +67,14 @@ BIPurple='\033[1;95m'     # Purple
 BICyan='\033[1;96m'       # Cyan
 BIWhite='\033[1;97m'      # White
 
-function dotfiles_doc_print_all() {
+function .echo_version() {
+  local hash=$(git rev-parse --short HEAD)
+  .echo $Green"[ \U0001F680 ] .dotfiles v0.1."$hash
+}
+
+function .dotfiles_doc_print_all() {
   echo_on=1
+  .echo_version
   source $HOME/.dotfiles/home/.aliases
   source $HOME/.dotfiles/home/.functions
   .echo "\n"

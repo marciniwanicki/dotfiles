@@ -2,7 +2,7 @@
 
 source $HOME/.dotfiles/home/.commands
 
-alias cmds="dotfiles_doc_print_all"
+alias "?"=".dotfiles_doc_print_all"
 
 .section "Navigation"
 .alias ".." "cd .."
