@@ -36,59 +36,72 @@ brew install wget
 brew cask install java
 
 # Install font tools.
-brew tap bramstein/webfonttools
-brew install sfnt2woff
-brew install sfnt2woff-zopfli
-brew install woff2
+read -p "Do you want to install font tools? " $REPLY
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    brew tap bramstein/webfonttools
+    brew install sfnt2woff
+    brew install sfnt2woff-zopfli
+    brew install woff2
+fi
+
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
-brew install aircrack-ng
-brew install bfg
-brew install binutils
-brew install binwalk
-brew install cifer
-brew install dex2jar
-brew install dns2tcp
-brew install fcrackzip
-brew install foremost
-brew install hashpump
-brew install hydra
-brew install john
-brew install knock
-brew install netpbm
-brew install nmap
-brew install pngcheck
-brew install socat
-brew install sqlmap
-brew install tcpflow
-brew install tcpreplay
-brew install tcptrace
-brew install ucspi-tcp # `tcpserver` etc.
-brew install xpdf
-brew install xz
+read -p "Do you want to install CFT tools? " $REPLY
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    brew install aircrack-ng
+    brew install bfg
+    brew install binutils
+    brew install binwalk
+    brew install cifer
+    brew install dex2jar
+    brew install dns2tcp
+    brew install fcrackzip
+    brew install foremost
+    brew install hashpump
+    brew install hydra
+    brew install john
+    brew install knock
+    brew install netpbm
+    brew install nmap
+    brew install pngcheck
+    brew install socat
+    brew install sqlmap
+    brew install tcpflow
+    brew install tcpreplay
+    brew install tcptrace
+    brew install ucspi-tcp # `tcpserver` etc.
+    brew install xpdf
+    brew install xz
+fi
 
 # Install other useful binaries.
-brew install ack
-brew install git
-brew install git-lfs
-brew install imagemagick --with-webp
-brew install lua
-brew install lynx
-brew install p7zip
-brew install pigz
-brew install pv
-brew install rename
-brew install rlwrap
-brew install ssh-copy-id
-brew install tree
-brew install vbindiff
-brew install zopfli
+read -p "Do you want to install other useful binaries? " $REPLY
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+    brew install ack
+    brew install git
+    brew install git-lfs
+    brew install imagemagick --with-webp
+    brew install lua
+    brew install lynx
+    brew install p7zip
+    brew install pigz
+    brew install pv
+    brew install rename
+    brew install rlwrap
+    brew install ssh-copy-id
+    brew install tree
+    brew install vbindiff
+    brew install zopfli
+fi
 
 # iterm2
 brew cask install iterm2
 mkdir ~/.dotfiles/config 2> /dev/null
 cp ../config/iterm2/iterm2-shared.json ~/.dotfiles/config/iterm2-shared.json
-ln -s ~/.dotfiles/config/iterm2-shared.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/iterm2-shared.json"
+ln -sf ~/.dotfiles/config/iterm2-shared.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/iterm2-shared.json"
 
 # Fzf (hacky :/)
 brew install fzf
