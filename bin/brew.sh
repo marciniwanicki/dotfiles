@@ -99,8 +99,6 @@ fi
 
 # iterm2
 brew cask install iterm2
-mkdir ~/.dotfiles/config 2> /dev/null
-cp ../config/iterm2/iterm2-shared.json ~/.dotfiles/config/iterm2-shared.json
 ln -sf ~/.dotfiles/config/iterm2-shared.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/iterm2-shared.json"
 
 # Fzf (hacky :/)
