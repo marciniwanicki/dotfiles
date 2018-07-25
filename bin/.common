@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 
-function print() {
+function _print() {
     echo "\033[0;32m[ \xE2\x9A\xA1 ] $1 \033[0m"
 }
 
-function error() {
+function _error() {
     echo "\033[0;31m[ \xE2\x9B\x94 ] Error: $1 \033[0m"
 }
