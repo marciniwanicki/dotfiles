@@ -112,8 +112,8 @@ function launch_zsh() {
 }
 
 function setup() {
-  source .common
   cd ~/.dotfiles/bin
+  source .common
   install_homebrew
   install_oh_my_zsh
   install_or_rather_brew
