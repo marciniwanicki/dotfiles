@@ -4,6 +4,7 @@ source .common
 
 function uninstall() {
   if [ -d "$HOME/.dotfiles" ]; then
+      cd ~/.dotfiles/bin
       ./uninstall.sh 2> /dev/null
   fi
 }
