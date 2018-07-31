@@ -68,8 +68,8 @@ BICyan='\033[1;96m'       # Cyan
 BIWhite='\033[1;97m'      # White
 
 function .echo_version() {
-  local hash=$(git --git-dir ~/.dotfiles/bin rev-parse --short HEAD)
-  local date=$(git --git-dir ~/.dotfiles/bin log -1 --format=%cd)
+  local hash=$(git --git-dir ~/.dotfiles/.git rev-parse --short HEAD)
+  local date=$(git --git-dir ~/.dotfiles/.git log -1 --format=%cd)
   .echo $Green"[ \U0001F680 ] .dotfiles v0.1."$hash" ("$date")"
 }
 
