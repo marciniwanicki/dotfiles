@@ -34,6 +34,12 @@ brew install wget
 
 # Install Java
 brew cask install java
+brew install ant
+brew install gradle
+brew install maven
+
+# Install Python
+brew install python
 
 # Install font tools.
 read -p "Do you want to install font tools? " $REPLY
@@ -95,6 +101,7 @@ then
     brew install tree
     brew install vbindiff
     brew install zopfli
+    brew install watchman
 fi
 
 # iterm2
