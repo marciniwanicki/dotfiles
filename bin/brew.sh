@@ -2,8 +2,10 @@
 
 # Install command-line tools using Homebrew.
 
-# Install cask
+# Tap extra repositories
 brew tap caskroom/cask
+brew tap caskroom/versions
+brew tap facebook/fb
 
 # Make sure we’re using the latest Homebrew.
 brew update
@@ -33,13 +35,21 @@ brew install gnu-sed --with-default-names
 brew install wget
 
 # Install Java
-brew cask install java
+brew cask install java8
 brew install ant
 brew install gradle
 brew install maven
 
 # Install Python
 brew install python
+
+# Install Editors
+brew cask install visual-studio-code
+
+# Install browsers
+brew cask install google-chrome
+brew cask install firefox
+brew cask install opera
 
 # Install font tools.
 read -p "Do you want to install font tools? " $REPLY
