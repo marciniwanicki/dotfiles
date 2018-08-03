@@ -13,6 +13,9 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
+# Install must have zsh extensions
+brew install zsh-syntax-highlighting
+
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 # https://www.gnu.org/software/coreutils/coreutils.html

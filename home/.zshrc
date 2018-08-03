@@ -4,7 +4,7 @@ export ZSH=$HOME/.dotfiles/oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="../custom/themes/powerlevel9k/powerlevel9k"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -63,12 +63,19 @@ plugins=(
   git
 )
 
+# Source oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
+# Source dotfiles
 source ~/.dotfiles/home/.exports
 source ~/.dotfiles/home/.aliases
 source ~/.dotfiles/home/.commands
 source ~/.dotfiles/home/.functions
 source ~/.dotfiles/home/.history
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Remove user prompt in agnoster theme
+prompt_context() {}
+
+# Run zsh syntax highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

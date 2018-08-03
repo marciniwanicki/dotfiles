@@ -79,6 +79,8 @@ function install_oh_my_zsh {
   cp ../templates/aliases.template $HOME/.dotfiles-local/.aliases 2> /dev/null
   cp ../templates/functions.template $HOME/.dotfiles-local/.functions 2> /dev/null
 
+  git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.dotfiles/oh-my-zsh/custom/themes/powerlevel9k
+
   _print 'Oh My Zsh is now installed'
 }
 
