@@ -41,37 +41,17 @@ function install_oh_my_zsh {
     _error "git is not installed"
     exit 1
   }
-  # The Windows (MSYS) Git is not compatible with normal use on cygwin
-  if [ "$OSTYPE" = cygwin ]; then
-    if git --version | grep msysgit > /dev/null; then
-      _error "Windows/MSYS Git is not supported on Cygwin"
-      _error "Make sure the Cygwin git package is installed and is first on the path"
-      exit 1
-    fi
-  fi
+ 
   env git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git "$ZSH" || {
     _error "git clone of oh-my-zsh repo failed\n"
     exit 1
   }
 
-
   _print "Looking for an existing zsh config..."
   if [ -f ~/.zshrc ] || [ -h ~/.zshrc ]; then
-    _print "Found ~/.zshrc.Backing up to ~/.zshrc.pre-oh-my-zsh";
+    _print "Found ~/.zshrc, backing up to ~/.zshrc.pre-oh-my-zsh";
     mv ~/.zshrc ~/.zshrc.pre-oh-my-zsh;
   fi
-
-  _print "Using the Oh My Zsh template file and adding it to ~/.zshrc"
-  cp "$ZSH"/templates/zshrc.zsh-template ~/.dotfiles/home/.zshrc
-  sed "/^export ZSH=/ c\\
-  export ZSH=\"$ZSH\"
-  " ~/.dotfiles/home/.zshrc > ~/.zshrc-omztemp
-  mv -f ~/.zshrc-omztemp ~/.dotfiles/home/.zshrc
-  ln -s ~/.dotfiles/home/.zshrc ~/.zshrc
-
-  for file in $HOME/.dotfiles/home/.{exports,aliases,commands,functions,history}; do
-    echo "source $file" >> ~/.dotfiles/home/.zshrc
-  done;
 
   # If this user's login shell is not already "zsh", attempt to switch.
   TEST_CURRENT_SHELL=$(expr "$SHELL" : '.*/\(.*\)')
@@ -89,7 +69,7 @@ function install_oh_my_zsh {
 
   for file in $HOME/.dotfiles/home/.*; do
     filename=$(basename $file)
-    if [ $filename = ".zshrc" ] || [ $filename = "." ] || [ $filename = ".." ]; then
+    if [ $filename = "." ] || [ $filename = ".." ]; then
       continue
     fi
     ln -s $file $HOME/$(basename $file)
