@@ -1,15 +1,23 @@
 #!/usr/bin/env zsh
 
-# Uninstall oh-my-zsh_history
-uninstall_oh_my_zsh 2> /dev/null
+read -p "Are you sure you want to remove all .dotfiles? " $REPLY
+if [[ $REPLY =~ ^[Yy]$ ]]
+then
+  # Uninstall oh-my-zsh_history
+  uninstall_oh_my_zsh 2> /dev/null
 
-# Remove all synbolic links
-for file in $HOME/.dotfiles/home/.*; do
-  rm -rf $HOME/$(basename $file) 2> /dev/null
-done;
+  # TODO: Think about some backup...
 
-# Remove old .dotfiles
-rm -rf ~/.dotfiles
-rm -rf ~/.zshrc
+  # Remove all synbolic links
+  for file in $HOME/.dotfiles/home/.*; do
+    rm -rf $HOME/$(basename $file) 2> /dev/null
+  done;
 
-echo ".dotfiles have been uninstalled"
+  # Remove old .dotfiles
+  rm -rf ~/.dotfiles
+  rm -rf ~/.dotfiles-local
+  rm -rf ~/.zshrc
+
+  echo ".dotfiles have been uninstalled"
+fi
+
