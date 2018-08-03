@@ -75,6 +75,10 @@ function install_oh_my_zsh {
     ln -s $file $HOME/$(basename $file)
   done;
 
+  mkdir $HOME/.dotfiles-local 2> /dev/null
+  cp ../templates/aliases.template $HOME/.dotfiles-local/.aliases 2> /dev/null
+  cp ../templates/functions.template $HOME/.dotfiles-local/.functions 2> /dev/null
+
   _print 'Oh My Zsh is now installed'
 }
 

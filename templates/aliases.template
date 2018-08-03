@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+source $HOME/.dotfiles/home/.commands
+
+# Example:
+# .section "Local aliases"
+# .alias "saymyname" "echo \"Marcin\""
+# .section_end

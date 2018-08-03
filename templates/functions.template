@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+source $HOME/.dotfiles/home/.commands
+
+# Example:
+# .section "Local functions"
+# .function "sayhello" "Say hello world;)"
+# function sayhello() {
+# 	echo "Hello, World!";
+# }
+# .section_end
+#

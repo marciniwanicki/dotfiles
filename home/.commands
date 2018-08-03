@@ -77,7 +77,9 @@ function .dotfiles_doc_print_all() {
   echo_on=1
   .echo_version
   source $HOME/.dotfiles/home/.aliases
+  source $HOME/.dotfiles-local/.aliases
   source $HOME/.dotfiles/home/.functions
+  source $HOME/.dotfiles-local/.functions
   .echo ""
   unset -v echo_on
 }
