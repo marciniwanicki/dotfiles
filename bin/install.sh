@@ -79,7 +79,15 @@ function install_oh_my_zsh {
   cp ../templates/aliases.template $HOME/.dotfiles-local/.aliases 2> /dev/null
   cp ../templates/functions.template $HOME/.dotfiles-local/.functions 2> /dev/null
 
+  # Install poverlevel9k
   git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.dotfiles/oh-my-zsh/custom/themes/powerlevel9k
+
+  # Install required fonts
+  git clone https://github.com/powerline/fonts.git --depth=1
+  cd fonts
+  ./install.sh
+  cd ..
+  rm -rf fonts
 
   _print 'Oh My Zsh is now installed'
 }
