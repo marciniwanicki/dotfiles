@@ -82,6 +82,7 @@ then
     brew install hydra
     brew install john
     brew install knock
+    brew install netcat
     brew install netpbm
     brew install nmap
     brew install pngcheck
