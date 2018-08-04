@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-read -p "Are you sure you want to remove all .dotfiles? " $REPLY
+read -q "$REPLY?Are you sure you want to remove all .dotfiles? "
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   # Uninstall oh-my-zsh_history
