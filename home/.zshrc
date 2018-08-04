@@ -61,6 +61,7 @@ ZSH_CUSTOM=$HOME/.dotfiles-local
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  vscode
 )
 
 # Source oh-my-zsh

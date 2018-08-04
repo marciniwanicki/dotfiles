@@ -88,6 +88,9 @@ command -v sha1sum > /dev/null
 # Airport CLI alias
 .alias "airport" '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
 
+# Diff two files in Visual Studio Code
+.command "vscd" "code --diff" "Diff two files in Visual Studio Code"
+
 # One of @janmoesen’s ProTip™s
 for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
 	.alias "${method}" "lwp-request -m '${method}'"
