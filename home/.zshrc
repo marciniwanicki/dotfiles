@@ -73,6 +73,10 @@ source ~/.dotfiles/home/.aliases
 source ~/.dotfiles/home/.commands
 source ~/.dotfiles/home/.functions
 source ~/.dotfiles/home/.history
+
+source ~/.dotfiles-local/.aliases
+source ~/.dotfiles-local/.functions
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Remove user prompt in agnoster theme
