@@ -12,7 +12,7 @@
       "Alpha Component" : 1,
       "Green Component" : 0.81960791349411011
     },
-    "Dynamic Profile Filename" : "$HOME/Library\/Application Support\/iTerm2\/DynamicProfiles\/iterm2-shared.json",
+    "Dynamic Profile Filename" : "$HOME\/Library\/Application Support\/iTerm2\/DynamicProfiles\/iterm2-shared.json",
     "Rows" : 25,
     "Ansi 11 Color" : {
       "Red Component" : 0.90196084976196289,
@@ -22,7 +22,7 @@
       "Green Component" : 0.85882359743118286
     },
     "Use Italic Font" : true,
-    "Custom Directory" : "Recycle",
+    "ASCII Ligatures" : false,
     "Foreground Color" : {
       "Red Component" : 0.92156869173049927,
       "Color Space" : "sRGB",
@@ -163,20 +163,20 @@
     ],
     "Keyboard Map" : {
       "0xf701-0x280000" : {
-        "Text" : "0x01",
-        "Action" : 11
+        "Action" : 11,
+        "Text" : "0x01"
       },
       "0xf702-0x280000" : {
-        "Action" : 10,
-        "Text" : "b"
+        "Text" : "b",
+        "Action" : 10
       },
       "0xf700-0x280000" : {
-        "Text" : "0x05",
-        "Action" : 11
+        "Action" : 11,
+        "Text" : "0x05"
       },
       "0xf703-0x280000" : {
-        "Action" : 10,
-        "Text" : "f"
+        "Text" : "f",
+        "Action" : 10
       }
     },
     "Log Directory" : "",
@@ -275,12 +275,12 @@
     "Automatically Log" : false,
     "Smart Cursor Color" : true,
     "Semantic History" : {
-      "editor" : "com.sublimetext.3",
+      "text" : "",
       "action" : "best editor",
-      "text" : ""
+      "editor" : "com.sublimetext.3"
     },
     "Ambiguous Double Width" : false,
-    "Blur Radius" : 3.6713217798223345,
+    "Blur Radius" : 9.1151233343908622,
     "Ansi 0 Color" : {
       "Red Component" : 0.086274512112140656,
       "Color Space" : "sRGB",
@@ -333,7 +333,7 @@
       "Alpha Component" : 1,
       "Green Component" : 0.63921564817428589
     },
-    "Transparency" : 0.28315950190355338,
+    "Transparency" : 0.098901491116751394,
     "Initial Text" : "",
     "Background Color" : {
       "Red Component" : 0.11138916015625,
@@ -357,7 +357,7 @@
     },
     "Columns" : 80,
     "Visual Bell" : true,
-    "ASCII Ligatures" : false,
+    "Custom Directory" : "Recycle",
     "Ansi 5 Color" : {
       "Red Component" : 0.85882371664047241,
       "Color Space" : "sRGB",
