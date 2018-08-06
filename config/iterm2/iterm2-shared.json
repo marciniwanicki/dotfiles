@@ -2,7 +2,7 @@
   "Profiles": [
   {
     "Badge Text" : "",
-    "ASCII Ligatures" : false,
+    "Thin Strokes" : 4,
     "Working Directory" : "$HOME",
     "Prompt Before Closing 2" : 0,
     "Selected Text Color" : {
@@ -22,7 +22,7 @@
       "Green Component" : 0.85882359743118286
     },
     "Use Italic Font" : true,
-    "Thin Strokes" : 4,
+    "Custom Directory" : "Recycle",
     "Foreground Color" : {
       "Red Component" : 0.92156869173049927,
       "Color Space" : "sRGB",
@@ -163,20 +163,20 @@
     ],
     "Keyboard Map" : {
       "0xf701-0x280000" : {
-        "Action" : 11,
-        "Text" : "0x01"
+        "Text" : "0x01",
+        "Action" : 11
       },
       "0xf702-0x280000" : {
-        "Text" : "b",
-        "Action" : 10
+        "Action" : 10,
+        "Text" : "b"
       },
       "0xf700-0x280000" : {
-        "Action" : 11,
-        "Text" : "0x05"
+        "Text" : "0x05",
+        "Action" : 11
       },
       "0xf703-0x280000" : {
-        "Text" : "f",
-        "Action" : 10
+        "Action" : 10,
+        "Text" : "f"
       }
     },
     "Log Directory" : "",
@@ -275,9 +275,9 @@
     "Automatically Log" : false,
     "Smart Cursor Color" : true,
     "Semantic History" : {
+      "editor" : "com.sublimetext.3",
       "action" : "best editor",
-      "text" : "",
-      "editor" : "com.sublimetext.3"
+      "text" : ""
     },
     "Ambiguous Double Width" : false,
     "Blur Radius" : 3.6713217798223345,
@@ -291,7 +291,7 @@
     "Cursor Type" : 1,
     "AWDS Pane Directory" : "",
     "Blur" : true,
-    "Normal Font" : "SourceCodeProForPowerline-Regular 13",
+    "Normal Font" : "SourceCodePro+Powerline+AwesomeRegular 13",
     "Vertical Spacing" : 1,
     "Use Underline Color" : false,
     "Disable Printing" : false,
@@ -357,7 +357,7 @@
     },
     "Columns" : 80,
     "Visual Bell" : true,
-    "Custom Directory" : "Recycle",
+    "ASCII Ligatures" : false,
     "Ansi 5 Color" : {
       "Red Component" : 0.85882371664047241,
       "Color Space" : "sRGB",

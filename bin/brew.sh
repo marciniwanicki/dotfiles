@@ -5,6 +5,7 @@
 # Tap extra repositories
 brew tap caskroom/cask
 brew tap caskroom/versions
+brew tap caskroom/fonts
 brew tap facebook/fb
 
 # Make sure we’re using the latest Homebrew.
@@ -62,6 +63,7 @@ then
     brew install sfnt2woff
     brew install sfnt2woff-zopfli
     brew install woff2
+    brew cask install font-source-code-pro
 fi
 
 

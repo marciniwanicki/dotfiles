@@ -4,6 +4,14 @@ export ZSH=$HOME/.dotfiles/oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+POWERLEVEL9K_HOME_ICON=''
+POWERLEVEL9K_HOME_SUB_ICON=''
+POWERLEVEL9K_FOLDER_ICON=''
+POWERLEVEL9K_VCS_GIT_ICON=''
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON=''
+POWERLEVEL9K_VCS_GIT_GITLAB_ICON=''
+POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=''
+POWERLEVEL9K_MODE='awesome-patched'
 ZSH_THEME="../custom/themes/powerlevel9k/powerlevel9k"
 
 # Set list of themes to load
