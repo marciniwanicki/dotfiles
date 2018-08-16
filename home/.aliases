@@ -5,6 +5,7 @@ source $HOME/.dotfiles/home/.commands
 alias "?"=".dotfiles_doc_print_all"
 
 .section "Navigation"
+.alias "??" "? | grep"
 .alias ".." "cd .."
 .alias "..." "cd ../.."
 .alias "...." "cd ../../.."
