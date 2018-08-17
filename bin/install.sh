@@ -83,11 +83,7 @@ function install_oh_my_zsh {
   git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.dotfiles/oh-my-zsh/custom/themes/powerlevel9k
 
   # Install required fonts
-  git clone https://github.com/powerline/fonts.git --depth=1
-  cd fonts
-  ./install.sh
-  cd ..
-  rm -rf fonts
+  cp ../fonts/SourceCodePro+Powerline+Awesome+Regular.ttf ~/Library/Fonts/SourceCodePro+Powerline+Awesome+Regular.ttf
 
   _print 'Oh My Zsh is now installed'
 }
