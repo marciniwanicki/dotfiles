@@ -2,7 +2,7 @@
   "Profiles": [
   {
     "Badge Text" : "",
-    "Thin Strokes" : 0,
+    "Thin Strokes" : 4,
     "Working Directory" : "$HOME",
     "Prompt Before Closing 2" : 0,
     "Selected Text Color" : {
