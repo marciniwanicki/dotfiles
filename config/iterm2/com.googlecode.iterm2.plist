@@ -47514,7 +47514,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>970 786 620 392 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>635 537 796 486 0 0 1920 1057 </string>
+	<string>635 571 796 486 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>-1386 368 1241 597 -1680 30 1680 1027 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -47967,7 +47967,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SourceCodePro+Powerline+AwesomeRegular 14</string>
+			<string>SourceCodePro+Powerline+AwesomeRegular 13</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Open Toolbelt</key>
@@ -48152,7 +48152,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Thin Strokes</key>
-			<integer>4</integer>
+			<integer>3</integer>
 			<key>Transparency</key>
 			<real>0.098901491116751394</real>
 			<key>Triggers</key>

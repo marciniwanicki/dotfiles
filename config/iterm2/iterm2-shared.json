@@ -2,7 +2,7 @@
   "Profiles": [
   {
     "Badge Text" : "",
-    "Thin Strokes" : 4,
+    "Thin Strokes" : 3,
     "Working Directory" : "$HOME",
     "Prompt Before Closing 2" : 0,
     "Selected Text Color" : {
@@ -12,7 +12,7 @@
       "Alpha Component" : 1,
       "Green Component" : 0.81960791349411011
     },
-    "Dynamic Profile Filename" : "$HOME\/Library\/Application Support\/iTerm2\/DynamicProfiles\/iterm2-shared.json",
+    "Dynamic Profile Filename" : "\/Users\/miwanicki1\/Library\/Application Support\/iTerm2\/DynamicProfiles\/iterm2-shared.json",
     "Rows" : 25,
     "Ansi 11 Color" : {
       "Red Component" : 0.90196084976196289,
@@ -22,7 +22,7 @@
       "Green Component" : 0.85882359743118286
     },
     "Use Italic Font" : true,
-    "ASCII Ligatures" : false,
+    "Custom Directory" : "Recycle",
     "Foreground Color" : {
       "Red Component" : 0.92156869173049927,
       "Color Space" : "sRGB",
@@ -163,20 +163,20 @@
     ],
     "Keyboard Map" : {
       "0xf701-0x280000" : {
-        "Action" : 11,
-        "Text" : "0x01"
+        "Text" : "0x01",
+        "Action" : 11
       },
       "0xf702-0x280000" : {
-        "Text" : "b",
-        "Action" : 10
+        "Action" : 10,
+        "Text" : "b"
       },
       "0xf700-0x280000" : {
-        "Action" : 11,
-        "Text" : "0x05"
+        "Text" : "0x05",
+        "Action" : 11
       },
       "0xf703-0x280000" : {
-        "Text" : "f",
-        "Action" : 10
+        "Action" : 10,
+        "Text" : "f"
       }
     },
     "Log Directory" : "",
@@ -240,7 +240,7 @@
     },
     "Disable Smcup Rmcup" : false,
     "Name" : "iterm2-shared",
-    "Blinking Cursor" : false,
+    "Blinking Cursor" : true,
     "Guid" : "0B34DBC7-6CEA-4DCE-886A-2B3EE5A2A9CE",
     "Ansi 1 Color" : {
       "Red Component" : 0.83529424667358398,
@@ -275,9 +275,9 @@
     "Automatically Log" : false,
     "Smart Cursor Color" : true,
     "Semantic History" : {
+      "editor" : "com.sublimetext.3",
       "text" : "",
-      "action" : "best editor",
-      "editor" : "com.sublimetext.3"
+      "action" : "best editor"
     },
     "Ambiguous Double Width" : false,
     "Blur Radius" : 9.1151233343908622,
@@ -288,7 +288,7 @@
       "Alpha Component" : 1,
       "Green Component" : 0.10196074098348618
     },
-    "Cursor Type" : 1,
+    "Cursor Type" : 0,
     "AWDS Pane Directory" : "",
     "Blur" : true,
     "Normal Font" : "SourceCodePro+Powerline+AwesomeRegular 13",
@@ -309,7 +309,7 @@
     "Horizontal Spacing" : 0.90000000000000002,
     "Option Key Sends" : 0,
     "Only The Default BG Color Uses Transparency" : true,
-    "Blink Allowed" : false,
+    "Blink Allowed" : true,
     "Minimum Contrast" : 0,
     "Ansi 15 Color" : {
       "Red Component" : 0.97254914045333862,
@@ -342,6 +342,7 @@
       "Alpha Component" : 1,
       "Green Component" : 0.10256790369749069
     },
+    "Unicode Version" : 9,
     "Screen" : 0,
     "AWDS Window Option" : "No",
     "Bound Hosts" : [
@@ -357,7 +358,7 @@
     },
     "Columns" : 80,
     "Visual Bell" : true,
-    "Custom Directory" : "Recycle",
+    "ASCII Ligatures" : false,
     "Ansi 5 Color" : {
       "Red Component" : 0.85882371664047241,
       "Color Space" : "sRGB",
