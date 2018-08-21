@@ -3,6 +3,7 @@
 source $HOME/.dotfiles/home/.commands
 
 alias "?"=".dotfiles_doc_print_all"
+alias curl='noglob curl'
 
 .section "Navigation"
 .alias "??" "? | grep"
@@ -34,6 +35,7 @@ alias "?"=".dotfiles_doc_print_all"
 .alias "glog" "git log --graph --decorate"
 .alias "glog1" "git log --graph --decorate --oneline"
 .alias "gp" "git push"
+.alias "gp!" "git push --force-with-lease"
 .alias "gpl" "git pull"
 .alias "gr" "git reset"
 .alias "gs" "git status"
