@@ -4,6 +4,7 @@ source $HOME/.dotfiles/home/.commands
 
 alias "?"=".dotfiles_doc_print_all"
 alias curl='noglob curl'
+alias git='noglob git'
 
 .section "Navigation"
 .alias "??" "? | grep"
