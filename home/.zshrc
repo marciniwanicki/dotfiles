@@ -82,6 +82,7 @@ source ~/.dotfiles/home/.commands
 source ~/.dotfiles/home/.functions
 source ~/.dotfiles/home/.history
 
+source ~/.dotfiles-local/.exports
 source ~/.dotfiles-local/.aliases
 source ~/.dotfiles-local/.functions
 
