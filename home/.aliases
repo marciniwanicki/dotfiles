@@ -40,7 +40,7 @@ alias git='noglob git'
 .alias "gpl" "git pull"
 .alias "gr" "git reset"
 .alias "gs" "git status"
-.alias "gsu" "git submodule update"
+.alias "gsu" "git submodule update --init --recursive"
 .section_end
 
 .section "System"
