@@ -66,7 +66,6 @@ then
     brew cask install font-source-code-pro
 fi
 
-
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
 read -p "Do you want to install CFT tools? " $REPLY
 if [[ $REPLY =~ ^[Yy]$ ]]
@@ -134,6 +133,10 @@ ln -s ~/.dotfiles/home/.fzf.zsh ~/.fzf.zsh
 
 # Ruby
 gem install bundler
+
+# Other dev tools
+brew install xctool
+brew install cloc
 
 # Remove outdated versions from the cellar.
 brew cleanup
