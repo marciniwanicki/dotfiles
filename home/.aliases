@@ -17,6 +17,8 @@ alias git='noglob git'
 .alias "la" "ls -laF" "List all files in long format, including dot files"
 .alias "lsd" "ls -lF | grep '^d'" "List only directories"
 .alias "path" 'echo -e ${PATH//:/\\n}' "Print each PATH entry on a separate line"
+.alias "evars" 'printenv' "Print environment variables"
+.alias "svars" '( setopt posixbuiltin; set; ) | less' "Print shell variables"
 .section_end
 
 .section "Locations"
