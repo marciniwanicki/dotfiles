@@ -45,6 +45,15 @@ alias git='noglob git'
 .alias "gsu" "git submodule update --init --recursive"
 .section_end
 
+.section "Apple Development"
+.alias "xc" "bash -c 'xed . > /dev/null 2>&1 &'" "Open Xcode"
+.alias "spg" "swift package generate-xcodeproj"
+.alias "spu" "swift package update"
+.alias "sb" "swift build"
+.alias "st" "swift test"
+.alias "sr" "killxc; spg; xc"
+.section_end
+
 .section "System"
 .alias "week" "date +%V" "Get week number"
 .alias "update" "sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup"

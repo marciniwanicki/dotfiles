@@ -164,7 +164,7 @@ function tre() {
 # fzf
 # ------------------------------------------------------------------------------
 
-# The following functions have been copied from 
+# The following functions have been copied from
 # https://github.com/atweiden/fzf-extras/blob/master/fzf-extras.sh
 
 # The MIT License (MIT)
@@ -328,6 +328,11 @@ fgstash() {
       git stash show -p "$sha"
     fi
   done
+}
+
+.function "killxc" "Kill Xcode"
+killxc() {
+  kill $(ps aux | grep 'Contents/MacOS/Xcode' | awk '{print $2}' | sort | awk '{print $1}' | tr ' ' '\n' | sed -n '1p')
 }
 
 .section_end
