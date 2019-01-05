@@ -335,4 +335,28 @@ killxc() {
   kill $(ps aux | grep 'Contents/MacOS/Xcode' | awk '{print $2}' | sort | awk '{print $1}' | tr ' ' '\n' | sed -n '1p')
 }
 
+.function "bl" "Buku pull"
+bl() {
+  pushd ~/.local/share/buku >/dev/null 2>&1
+  git pull
+  popd >/dev/null 2>&1
+}
+
+.function "bp" "Buku push"
+bp() {
+  pushd ~/.local/share/buku >/dev/null 2>&1
+  git add -A
+  git commit -m "Update database"
+  git pushr
+  popd >/devr/null 2>&1
+}
+
+.function "u" "Update .dotfiles, .buku"
+u() {
+  pushd ~/.dotfiles >/dev/null 2>&1
+  git pull
+  popd >/dev/null 2>&1
+  bl
+}
+
 .section_end
