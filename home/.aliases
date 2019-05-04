@@ -29,6 +29,8 @@ alias git='noglob git'
 
 .section "Git"
 .alias "g" "git"
+.alias "ga" "git add"
+.alias "gai" "git add -i"
 .alias "gcl" "git clone"
 .alias "gc" "git commit"
 .alias "gcm" "git commit -m"
