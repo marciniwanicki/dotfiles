@@ -78,6 +78,7 @@ function install_oh_my_zsh {
   mkdir $HOME/.dotfiles-local 2> /dev/null
   cp ../templates/aliases.template $HOME/.dotfiles-local/.aliases 2> /dev/null
   cp ../templates/functions.template $HOME/.dotfiles-local/.functions 2> /dev/null
+  cp ../templates/exports.template $HOME/.dotfiles-local/.exports 2> /dev/null
 
   # Install poverlevel9k
   git clone https://github.com/bhilburn/powerlevel9k.git $HOME/.dotfiles/oh-my-zsh/custom/themes/powerlevel9k

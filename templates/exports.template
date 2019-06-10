@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# quick dev
+# export QUICK_BIN=/path/to/quick
+# export PATH=$PATH:$QUICK_BIN
