@@ -359,4 +359,9 @@ u() {
   bl
 }
 
+.function "gcad" "Git commit amend date"
+function gcad() {
+    git commit --amend --no-edit --date "$1"
+}
+
 .section_end

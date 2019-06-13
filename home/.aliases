@@ -19,6 +19,8 @@ alias git='noglob git'
 .alias "path" 'echo -e ${PATH//:/\\n}' "Print each PATH entry on a separate line"
 .alias "evars" 'printenv' "Print environment variables"
 .alias "svars" '( setopt posixbuiltin; set; ) | less' "Print shell variables"
+.alias "edf" "e $HOME/.dotfiles"
+.alias "eldf" "e $HOME/.dotfiles-local"
 .section_end
 
 .section "Locations"
