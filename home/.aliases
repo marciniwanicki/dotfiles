@@ -61,7 +61,8 @@ alias git='noglob git'
 .section "System"
 .alias "week" "date +%V" "Get week number"
 .alias "update" "sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup"
-.alias "cleanup" "find . -type f -name '*.DS_Store' -ls -delete" "Recursively delete '.DS_Store' files"
+.alias "cleanup" "find . -type f -name '*.DS_Store' -ls -delete; find . -name '*.orig' -delete" "Recursively delete '.DS_Store' and '*.orig' files"
+.alias "findf" "find . -type f -name" "Find files" 
 
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.
