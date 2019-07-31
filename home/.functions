@@ -293,6 +293,12 @@ fgshow() {
 FZF-EOF"
 }
 
+.function "gcopr" "Checkout PR"
+gcopr() {
+    git fetch origin pull/$1/head:pr/$1
+    git checkout pr/$1
+}
+
 # type fstash to get a list of your stashes
 # enter shows you the contents of the stash
 # ctrl-d shows a diff of the stash against your current HEAD
