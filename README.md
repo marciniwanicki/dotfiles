@@ -27,7 +27,7 @@ new shell tricks.
 ## How to install
 
 ```bash
-sh -c "$(curl -fsSL https://bitbucket.org/marciniwanicki/dotfiles/raw/master/bin/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/marciniwanicki/dotfiles/master/bin/install.sh)"
 ```
 
 ## License
