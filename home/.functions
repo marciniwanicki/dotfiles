@@ -295,7 +295,8 @@ FZF-EOF"
 
 .function "gcopr" "Checkout PR"
 gcopr() {
-    git fetch origin pull/$1/head:pr/$1
+    REMOTE=${2:="origin"}
+    git fetch $REMOTE pull/$1/head:pr/$1
     git checkout pr/$1
 }
 
