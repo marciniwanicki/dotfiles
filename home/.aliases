@@ -45,13 +45,16 @@ alias git='noglob git'
 .alias "gp!" "git push --force-with-lease"
 .alias "gpl" "git pull"
 .alias "gr" "git reset"
+.alias "grbm" "git rebase master"
 .alias "gs" "git status"
 .alias "gsu" "git submodule update --init --recursive"
 .section_end
 
 .section "Apple Development"
 .alias "xc" "bash -c 'xed . > /dev/null 2>&1 &'" "Open Xcode"
+.alias "spc" "swift package clean"
 .alias "spg" "swift package generate-xcodeproj"
+.alias "spgx" "spg; xc"
 .alias "spu" "swift package update"
 .alias "sb" "swift build"
 .alias "st" "swift test"
@@ -62,7 +65,7 @@ alias git='noglob git'
 .alias "week" "date +%V" "Get week number"
 .alias "update" "sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup"
 .alias "cleanup" "find . -type f -name '*.DS_Store' -ls -delete; find . -name '*.orig' -delete" "Recursively delete '.DS_Store' and '*.orig' files"
-.alias "findf" "find . -type f -name" "Find files" 
+.alias "findf" "find . -type f -name" "Find files"
 
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.
@@ -75,7 +78,7 @@ alias git='noglob git'
 
 # Disable/enabled Spotlight
 .alias "spotoff" "sudo mdutil -a -i off" "Disable Spotlight"
-.alias  "spoton" "sudo mdutil -a -i on" "Enable Spotlight"
+.alias "spoton" "sudo mdutil -a -i on" "Enable Spotlight"
 
 # Lock the screen
 .alias "afk" "/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend" "Lock the screen"
