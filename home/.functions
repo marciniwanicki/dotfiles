@@ -371,4 +371,10 @@ function gcad() {
     git commit --amend --no-edit --date "$1"
 }
 
+.function "gpb" "Push branch and set upstream"
+function gpb() {
+  upstream=${1:-origin}
+  git push --set-upstream ${upstream} $(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+}
+
 .section_end
