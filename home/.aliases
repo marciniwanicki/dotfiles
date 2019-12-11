@@ -37,6 +37,8 @@ alias git='noglob git'
 .alias "gc" "git commit"
 .alias "gcm" "git commit -m"
 .alias "gcas" "git commit --amend --signoff"
+.alias "gco" "git checkout"
+.alias "gcob" "git checkout -b"
 .alias "gd" "git diff"
 .alias "gdc" "git diff --cached"
 .alias "gf" "git fetch"
