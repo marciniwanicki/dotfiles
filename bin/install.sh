@@ -41,7 +41,7 @@ function install_oh_my_zsh {
     _error "git is not installed"
     exit 1
   }
- 
+
   env git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git "$ZSH" || {
     _error "git clone of oh-my-zsh repo failed\n"
     exit 1
@@ -111,8 +111,8 @@ function setup() {
 }
 
 function clone() {
-  # sh -c "$(curl -fsSL https://bitbucket.org/marciniwanicki/dotfiles/raw/master/bin/install.sh)"
-  git clone git@bitbucket.org:marciniwanicki/dotfiles.git ~/.dotfiles
+  # sh -c "$(curl -fsSL https://raw.githubusercontent.com/marciniwanicki/dotfiles/master/bin/install.sh)"
+  git clone git@github.com:marciniwanicki/dotfiles.git ~/.dotfiles
 }
 
 function copy() {
