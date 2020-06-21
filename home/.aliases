@@ -50,6 +50,8 @@ alias git='noglob git'
 .alias "gr" "git reset"
 .alias "grbm" "git rebase master"
 .alias "gs" "git status"
+.alias "gsh" "git show"
+.alias "gshf" "git diff-tree --name-only -r"
 .alias "gsu" "git submodule update --init --recursive"
 .section_end
 
