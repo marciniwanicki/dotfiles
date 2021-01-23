@@ -62,6 +62,7 @@ alias git='noglob git'
 .alias "spgx" "spg; xc"
 .alias "spu" "swift package update"
 .alias "sb" "swift build"
+.alias "sbr" "swift build -c release"
 .alias "st" "swift test"
 .alias "sr" "killxc; spg; xc"
 .section_end
