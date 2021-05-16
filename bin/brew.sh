@@ -3,9 +3,9 @@
 # Install command-line tools using Homebrew.
 
 # Tap extra repositories
-brew tap caskroom/cask
-brew tap caskroom/versions
-brew tap caskroom/fonts
+brew tap homebrew/cask
+brew tap homebrew/cask-versions
+brew tap homebrew/cask-fonts
 brew tap facebook/fb
 
 # Make sure we’re using the latest Homebrew.
@@ -39,7 +39,7 @@ brew install gnu-sed --with-default-names
 brew install wget
 
 # Install Java
-brew cask install java8
+brew install --cask java8
 brew install ant
 brew install gradle
 brew install maven
@@ -48,12 +48,10 @@ brew install maven
 brew install python
 
 # Install Editors
-brew cask install visual-studio-code
+brew install --cask visual-studio-code
 
 # Install browsers
-brew cask install google-chrome
-brew cask install firefox
-brew cask install opera
+brew install --cask google-chrome
 
 # Install font tools.
 read -p "Do you want to install font tools? " $REPLY
@@ -63,7 +61,7 @@ then
     brew install sfnt2woff
     brew install sfnt2woff-zopfli
     brew install woff2
-    brew cask install font-source-code-pro
+    brew install --cask font-source-code-pro
 fi
 
 # Install some CTF tools; see https://github.com/ctfs/write-ups.
@@ -120,7 +118,7 @@ then
 fi
 
 # iterm2
-brew cask install iterm2
+brew install --cask iterm2
 mkdir -p "$HOME/Library/Application Support/iTerm2/DynamicProfiles/"
 ln -sf ~/.dotfiles/config/iterm2/iterm2-shared.json "$HOME/Library/Application Support/iTerm2/DynamicProfiles/iterm2-shared.json"
 
