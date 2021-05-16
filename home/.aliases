@@ -104,7 +104,7 @@ alias ifactive="ifconfig | pcregrep -M -o '^[^\t:]+:([^\n]|\n\t)*status: active'
 .section "Tools"
 
 # Edit with favourite editor
-.alias "e" "vsc" "Edit in Visual Studio Code"
+.alias "e" "code" "Edit in Visual Studio Code"
 
 # macOS has no `md5sum`, so use `md5` as a fallback
 command -v md5sum > /dev/null
