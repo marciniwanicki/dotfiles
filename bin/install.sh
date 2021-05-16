@@ -111,8 +111,7 @@ function setup() {
 }
 
 function clone() {
-  # sh -c "$(curl -fsSL https://raw.githubusercontent.com/marciniwanicki/dotfiles/master/bin/install.sh)"
-  git clone git@github.com:marciniwanicki/dotfiles.git ~/.dotfiles
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/marciniwanicki/dotfiles/master/bin/install.sh)"
 }
 
 function copy() {
