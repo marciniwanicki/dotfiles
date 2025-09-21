@@ -1,3 +1,106 @@
 #!/usr/bin/env zsh
 
+source $HOME/.dotfiles/utils/common
 
+alias "?"=".dotfiles_doc_print_all"
+alias curl='noglob curl'
+alias git='noglob git'
+
+.section "Navigation"
+.alias "??" "? | grep"
+.alias ".." "cd .."
+.alias "..." "cd ../.."
+.alias "...." "cd ../../.."
+.alias "....." "cd ../../../.."
+.alias "~" "cd ~"
+.alias "l" "ls -lF" "List all files in long format"
+.alias "la" "ls -laF" "List all files in long format, including dot files"
+.alias "lsd" "ls -lF | grep '^d'" "List only directories"
+.alias "path" 'echo -e ${PATH//:/\\n}' "Print each PATH entry on a separate line"
+.alias "evars" 'printenv' "Print environment variables"
+.alias "svars" '( setopt posixbuiltin; set; ) | less' "Print shell variables"
+.alias "edf" "e $HOME/.dotfiles"
+.section_end
+
+.section "Git"
+.alias "g" "git"
+.alias "ga" "git add"
+.alias "gai" "git add -i"
+.alias "gcl" "git clone"
+.alias "gc" "git commit"
+.alias "gcm" "git commit -m"
+.alias "gcas" "git commit --amend --signoff"
+.alias "gco" "git checkout"
+.alias "gcob" "git checkout -b"
+.alias "gd" "git diff"
+.alias "gdc" "git diff --cached"
+.alias "gf" "git fetch"
+.alias "glog" "git log --graph --decorate"
+.alias "glog1" "git log --graph --decorate --oneline"
+.alias "gp" "git push"
+.alias "gp!" "git push --force-with-lease"
+.alias "gpl" "git pull"
+.alias "gr" "git reset"
+.alias "grbm" "git rebase master"
+.alias "gs" "git status"
+.alias "gsh" "git show"
+.alias "gshf" "git diff-tree --name-only -r"
+.alias "gsu" "git submodule update --init --recursive"
+.section_end
+
+.section "System"
+.alias "week" "date +%V" "Get week number"
+.alias "update" "sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup; npm install npm -g; npm update -g; sudo gem update --system; sudo gem update; sudo gem cleanup"
+.alias "cleanup" "find . -type f -name '*.DS_Store' -ls -delete; find . -name '*.orig' -delete" "Recursively delete '.DS_Store' and '*.orig' files"
+
+# Empty the Trash on all mounted volumes and the main HDD.
+# Also, clear Apple’s System Logs to improve shell startup speed.
+# Finally, clear download history from quarantine. https://mths.be/bum
+.alias "emptytrash" "sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+
+# Hide/show all desktop icons (useful when presenting)
+.alias "hidedesktop" "defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+.alias "showdesktop" "defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+
+# Lock the screen
+.alias "afk" "/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend" "Lock the screen"
+
+.alias "reload" "exec ${SHELL} -l" "Reload the shell (i.e. invoke as a login shell)"
+
+.section_end
+
+.section "Networking"
+.alias "ip" "dig +short myip.opendns.com @resolver1.opendns.com" "Show public IP"
+.section_end
+
+.section "Tools"
+
+# Edit with favourite editor
+.alias "e" "code" "Edit in Visual Studio Code"
+
+# macOS has no `md5sum`, so use `md5` as a fallback
+command -v md5sum > /dev/null
+.alias "md5sum" "md5"
+
+# macOS has no `sha1sum`, so use `shasum` as a fallback
+command -v sha1sum > /dev/null
+.alias "sha1sum" "shasum"
+
+# URL-encode strings
+.alias "urlencode" 'python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"' "URL-encode strings"
+
+# PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
+.alias "plistbuddy" "/usr/libexec/PlistBuddy"
+
+# Airport CLI alias
+.alias "airport" '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport'
+
+# Diff two files in Visual Studio Code
+.command "vscd" "code --diff" "Diff two files in Visual Studio Code"
+
+# One of @janmoesen’s ProTip™s
+for method in GET HEAD POST PUT DELETE TRACE OPTIONS; do
+	.alias "${method}" "lwp-request -m '${method}'"
+done
+
+.section_end
