@@ -14,6 +14,11 @@ pushd $HOME/.dotfiles
     git pull
   popd
 
+  # Update fzf-tab
+  pushd vendor/fzf-tab
+    git pull
+  popd
+
   # Update brew packages
   ./bin/brew.sh
 popd

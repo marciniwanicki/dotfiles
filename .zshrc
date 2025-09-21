@@ -121,6 +121,10 @@ source ~/.dotfiles/vendor/fzf-git.sh/fzf-git.sh
 # Set up zsh-autosuggestions
 source ~/.dotfiles/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Set up fzf-tab
+autoload -U compinit; compinit
+source ~/.dotfiles/vendor/fzf-tab/fzf-tab.plugin.zsh
+
 # Enable syntax highlighting
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

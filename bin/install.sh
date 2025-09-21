@@ -41,6 +41,12 @@ function install_fzf_git() {
   popd
 }
 
+function install_fzf_tab() {
+  pushd $HOME/.dotfiles/vendor
+  git clone https://github.com/Aloxaf/fzf-tab.git
+  popd
+}
+
 function install_zsh_autosuggestions() {
   pushd $HOME/.dotfiles/vendor
   git clone https://github.com/zsh-users/zsh-autosuggestions.git
@@ -53,6 +59,7 @@ function setup() {
   install_oh_my_zsh
   install_brew_packages
   install_fzf_git
+  install_fzf_tab
   install_zsh_autosuggestions
   popd
   
