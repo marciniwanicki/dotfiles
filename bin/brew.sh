@@ -55,5 +55,8 @@ brew install tree
 # Install tmux for terminal multiplexing
 brew install tmux
 
+# Install neovim for a modern text editor
+brew install neovim
+
 # Remove outdated versions from the cellar
 brew cleanup
