@@ -111,3 +111,8 @@ eval "$(zoxide init zsh --cmd cd)"
 
 # Enable syntax highlighting
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# User configuration
+source ~/.exports
+source ~/.aliases
+source ~/.functions

@@ -1,0 +1,23 @@
+#!/usr/bin/env zsh
+
+source $HOME/.dotfiles/utils/common
+
+alias "?"=".dotfiles_doc_print_all"
+alias curl='noglob curl'
+alias git='noglob git'
+
+.section "Navigation"
+.alias "??" "? | grep"
+.alias ".." "cd .."
+.alias "..." "cd ../.."
+.alias "...." "cd ../../.."
+.alias "....." "cd ../../../.."
+.alias "~" "cd ~"
+.alias "l" "ls -lF" "List all files in long format"
+.alias "la" "ls -laF" "List all files in long format, including dot files"
+.alias "lsd" "ls -lF | grep '^d'" "List only directories"
+.alias "path" 'echo -e ${PATH//:/\\n}' "Print each PATH entry on a separate line"
+.alias "evars" 'printenv' "Print environment variables"
+.alias "svars" '( setopt posixbuiltin; set; ) | less' "Print shell variables"
+.alias "edf" "e $HOME/.dotfiles"
+.section_end

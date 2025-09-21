@@ -17,6 +17,9 @@ then
   # Remove old .dotfiles
   rm -rf ~/.dotfiles
   rm -f ~/.zshrc
- 
+
+  # Restart shell
+  exec zsh
+
   echo "Your .dotfiles have been uninstalled"
 fi
