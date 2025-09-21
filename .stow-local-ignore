@@ -1,4 +1,6 @@
 .git
+.keys
+.keys.local
 bin
 utils
 vendor

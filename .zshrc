@@ -119,6 +119,9 @@ source ~/.dotfiles/vendor/fzf-git.sh/fzf-git.sh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
+source ~/.dotfiles/.keys
+source ~/.dotfiles/.keys.local
+
 source ~/.exports
 source ~/.exports.local
 source ~/.aliases

@@ -76,9 +76,12 @@ function .echo_version() {
 function .dotfiles_doc_print_all() {
   echo_on=1
   .echo_version
+  source $HOME/.dotfiles/.keys
+  source $HOME/.dotfiles/.keys.local
   source $HOME/.aliases
-  source $HOME/.aliases
+  source $HOME/.aliases.local
   source $HOME/.functions
+  source $HOME/.functions.local
   .echo ""
   unset -v echo_on
 }
@@ -113,6 +116,13 @@ function .command() {
     c3="  \t"$BBlue"# "$3$Color_Off
   fi
   text=$c1$c2$c3
+  .echo $text
+}
+
+function .key() {
+  c1=$BBlue$1$Color_Off
+  c2=" → "$2$Color_Off
+  text=$c1$c2
   .echo $text
 }
 

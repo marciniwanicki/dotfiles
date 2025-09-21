@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+source $HOME/.dotfiles/utils/common
+
+.section "Git key bindings"
+.key "CTRL-G ?" "to show this list"
+.key "CTRL-G CTRL-F" "for Files"
+.key "CTRL-G CTRL-B" "for Branches"
+.key "CTRL-G CTRL-T" "for Tags"
+.key "CTRL-G CTRL-R" "for Remotes"
+.key "CTRL-G CTRL-H" "for commit Hashes"
+.key "CTRL-G CTRL-S" "for Stashes"
+.key "CTRL-G CTRL-L" "for reflogs"
+.key "CTRL-G CTRL-W" "for Worktrees"
+.key "CTRL-G CTRL-E" "for Each ref (git for-each-ref)"
+.section_end
