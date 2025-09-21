@@ -138,3 +138,10 @@ source ~/.aliases
 source ~/.aliases.local
 source ~/.functions
 source ~/.functions.local
+
+# Auto-start tmux if not already inside a tmux session
+if command -v tmux >/dev/null 2>&1; then
+  if [[ -z "$TMUX" ]] && [[ -n "$PS1" ]]; then
+    tmux attach -t default || tmux new -s default
+  fi
+fi

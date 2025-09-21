@@ -1,9 +1,9 @@
 #!/usr/bin/env zsh -e
 
-# Make sure we’re using the latest Homebrew.
+# Make sure we’re using the latest Homebrew
 brew update
 
-# Upgrade any already-installed formulae.
+# Upgrade any already-installed formulae
 brew upgrade
 
 # Install fonts for iTerm2
@@ -55,5 +55,5 @@ brew install tree
 # Install tmux for terminal multiplexing
 brew install tmux
 
-# Remove outdated versions from the cellar.
+# Remove outdated versions from the cellar
 brew cleanup
