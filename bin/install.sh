@@ -12,7 +12,23 @@ function install_oh_my_zsh {
     exit 1
   fi
 
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  # Prevent the cloned repository from having insecure permissions. Failing to do
+  # so causes compinit() calls to fail with "command not found: compdef" _errors
+  # for users with insecure umasks (e.g., "002", allowing group writability). Note
+  # that this will be ignored under Cygwin by default, as Windows ACLs take
+  # precedence over umasks except for filesystems mounted with option "noacl".
+  umask g-w,o-w
+
+  command -v git >/dev/null 2>&1 || {
+    echo "Error: git is not installed"
+    exit 1
+  }
+
+  echo "Cloning Oh My Zsh..."
+  env git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git "$ZSH" || {
+    echo "Error: git clone of oh-my-zsh repo failed"
+    exit 1
+  }
 }
 
 function install_brew_packages() {
@@ -20,14 +36,19 @@ function install_brew_packages() {
 }
 
 function setup() {
-  pushd ~/.dotfiles/bin
+  pushd $HOME/.dotfiles/bin
   install_homebrew
   install_oh_my_zsh
   install_brew_packages
   popd
-  pushd ~/.dotfiles
+  
+  pushd $HOME/.dotfiles
   stow .
   popd
+  
+  exec zsh
+
+  echo "Installation complete!"
 }
 
 function clone() {
