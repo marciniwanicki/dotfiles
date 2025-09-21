@@ -14,3 +14,9 @@ source $HOME/.dotfiles/utils/common
 .key "CTRL-G CTRL-W" "for Worktrees"
 .key "CTRL-G CTRL-E" "for Each ref (git for-each-ref)"
 .section_end
+
+.section "Navigation key bindings"
+.key "Ctrl-T" "fuzzy file search"
+.key "Ctrl-R" "fuzzy search through your command history"
+.key "Alt-C" "change directory interactively (no alias)"
+.section_end

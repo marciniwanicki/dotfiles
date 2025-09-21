@@ -20,9 +20,8 @@ alias git='noglob git'
 .alias "evars" 'printenv' "Print environment variables"
 .alias "svars" '( setopt posixbuiltin; set; ) | less' "Print shell variables"
 .alias "edf" "e $HOME/.dotfiles"
-.alias "lsf" "ls | fzf" "Ctrl-T → fuzzy file search"
-.alias "historyf" "history | fzf" "Ctrl-R → fuzzy search through your command history"
-# Alt-C → change directory interactively (no alias)
+.alias "lsf" "ls | fzf"
+.alias "historyf" "history | fzf"
 .section_end
 
 .section "Git"
