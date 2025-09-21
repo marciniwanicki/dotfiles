@@ -6,6 +6,9 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
+# Install starship for a fast shell prompt
+brew install starship
+
 # Install must have zsh extensions
 brew install zsh-syntax-highlighting
 
