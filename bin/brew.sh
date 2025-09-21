@@ -26,3 +26,9 @@ brew install dpkg
 
 # Install npm for managing Node.js packages
 brew install npm
+
+# Install cloc for counting lines of code
+brew install cloc
+
+# Remove outdated versions from the cellar.
+brew cleanup
