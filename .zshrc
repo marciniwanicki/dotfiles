@@ -70,7 +70,10 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    fzf
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -114,6 +117,9 @@ source <(fzf --zsh)
 
 # Set up fzf-git key bindings and fuzzy completion
 source ~/.dotfiles/vendor/fzf-git.sh/fzf-git.sh
+
+# Set up zsh-autosuggestions
+source ~/.dotfiles/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # Enable syntax highlighting
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

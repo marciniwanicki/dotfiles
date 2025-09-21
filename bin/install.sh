@@ -41,12 +41,19 @@ function install_fzf_git() {
   popd
 }
 
+function install_zsh_autosuggestions() {
+  pushd $HOME/.dotfiles/vendor
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git
+  popd
+}
+
 function setup() {
   pushd $HOME/.dotfiles/bin
   install_homebrew
   install_oh_my_zsh
   install_brew_packages
   install_fzf_git
+  install_zsh_autosuggestions
   popd
   
   pushd $HOME/.dotfiles
