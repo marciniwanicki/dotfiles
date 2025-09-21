@@ -39,5 +39,8 @@ brew install jq
 # Install gh for GitHub CLI
 brew install gh
 
+# Install ripgrep for searching files
+brew install ripgrep
+
 # Remove outdated versions from the cellar.
 brew cleanup
