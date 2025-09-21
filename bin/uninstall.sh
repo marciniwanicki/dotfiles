@@ -6,7 +6,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]
 then
   # Unlink
   pushd $HOME/.dotfiles
-    stow . -D
+    stow -D .
   popd
 
   # Uninstall oh-my-zsh
