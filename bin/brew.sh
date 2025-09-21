@@ -6,6 +6,10 @@ brew update
 # Upgrade any already-installed formulae.
 brew upgrade
 
+# Install fonts for iTerm2
+brew install --cask font-meslo-lg-nerd-font
+brew install --cask font-jetbrains-mono
+
 # Install starship for a fast shell prompt
 brew install starship
 
