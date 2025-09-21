@@ -112,6 +112,9 @@ eval "$(zoxide init zsh --cmd cd)"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
+# Set up fzf-git key bindings and fuzzy completion
+source ~/.dotfiles/vendor/fzf-git.sh/fzf-git.sh
+
 # Enable syntax highlighting
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 

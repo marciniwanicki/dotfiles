@@ -35,11 +35,18 @@ function install_brew_packages() {
   ./brew.sh
 }
 
+function install_fzf_git() {
+  pushd $HOME/.dotfiles/vendor
+  git clone https://github.com/junegunn/fzf-git.sh.git
+  popd
+}
+
 function setup() {
   pushd $HOME/.dotfiles/bin
   install_homebrew
   install_oh_my_zsh
   install_brew_packages
+  install_fzf_git
   popd
   
   pushd $HOME/.dotfiles
