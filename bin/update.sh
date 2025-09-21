@@ -9,6 +9,11 @@ pushd $HOME/.dotfiles
     git pull
   popd
 
+  # Update zsh-autosuggestions
+  pushd vendor/zsh-autosuggestions
+    git pull
+  popd
+
   # Update brew packages
   ./bin/brew.sh
 popd
