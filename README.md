@@ -10,16 +10,17 @@
  #aliases #functions #macos-setup
 ```
 
-The repository contains a mix of popular open sourced dotfiles shared
-on github as well as my own random setup.
-**To be clear, I do not recommend you to fork that project :-)** First, there are much
-better and well maintained dotfiles out there, second, you might end up
-installing lots of stuff on you machine that will never be used. It's probably
-better if you spend some time reading the files and crafting new ones
-fitting best your own needs. I bet you will do it well and even learn some
-new shell tricks.
+This repository is a personal collection of dotfiles: a mix of popular, open-sourced tools and configs and my own random setup.  
+
+**Note:** I don't recommend using "as-is" or forking this repo.  
+- There are better-maintained dotfile projects out there.  
+- Running these scripts might install a bunch of tools you'll never use.  
+
+Instead, I suggest browsing the files, taking inspiration, and building dotfiles that fit your own workflow. You'll probably pick up some new shell tricks along the way.
 
 ## Installation
+
+If you *really* want to install my setup:
 
 ```zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/marciniwanicki/dotfiles/main/bin/install.sh)"
