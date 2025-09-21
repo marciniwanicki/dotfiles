@@ -22,4 +22,6 @@ then
   exec zsh
 
   echo "Your .dotfiles have been uninstalled"
+
+  cd $HOME
 fi
