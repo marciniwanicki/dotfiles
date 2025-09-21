@@ -20,11 +20,14 @@ function install_brew_packages() {
 }
 
 function setup() {
-  cd ~/.dotfiles/bin
-  source .common
+  pushd ~/.dotfiles/bin
   install_homebrew
   install_oh_my_zsh
   install_brew_packages
+  popd
+  pushd ~/.dotfiles
+  stow .
+  popd
 }
 
 function clone() {
