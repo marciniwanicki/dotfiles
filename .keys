@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 source $HOME/.dotfiles/utils/common
+source $HOME/.dotfiles/vendor/fzf-git.sh/fzf-git.sh
 
 .section "Git key bindings"
 .key "CTRL-G ?" "to show this list"
