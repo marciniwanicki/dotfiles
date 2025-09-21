@@ -30,5 +30,11 @@ brew install npm
 # Install cloc for counting lines of code
 brew install cloc
 
+# Install jq for processing JSON
+brew install jq
+
+# Install gh for GitHub CLI
+brew install gh
+
 # Remove outdated versions from the cellar.
 brew cleanup
