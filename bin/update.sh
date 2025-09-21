@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env zsh -e
 
 pushd $HOME/.dotfiles
   # Update dotfiles repository

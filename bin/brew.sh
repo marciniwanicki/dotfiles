@@ -1,4 +1,4 @@
-#!/usr/bin/env bash -e
+#!/usr/bin/env zsh -e
 
 # Make sure we’re using the latest Homebrew.
 brew update
@@ -41,6 +41,9 @@ brew install gh
 
 # Install ripgrep for searching files
 brew install ripgrep
+
+# Install fd for a simple, fast and user-friendly alternative to 'find'
+brew install fd
 
 # Remove outdated versions from the cellar.
 brew cleanup

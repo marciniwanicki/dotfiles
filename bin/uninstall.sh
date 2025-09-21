@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env zsh -e
 
 read -q "$REPLY?Are you sure you want to remove all .dotfiles? [y/N] "
 echo ""
