@@ -1,0 +1,16 @@
+#!/usr/bin/env zsh
+
+HISTSIZE=35000                    # How many lines of history to keep in memory
+SAVEHIST=35000                    # Number of history entries to save to disk
+HISTFILE=~/.zsh_history           # Where to save history to disk
+
+# Options
+setopt appendhistory              # Append to the history file (no overwriting)
+setopt sharehistory               # Share history across terminals
+setopt incappendhistory           # Immediately append to the history file
+setopt histignoredups             # Ignore duplicates in history
+setopt histignorespace            # Ignore commands starting with a space
+setopt extendedhistory            # Save timestamp of each command in history
+setopt histverify                 # Show command with history expansion to user before executing
+setopt histignorealldups          # Remove older duplicates of a command when adding a new entry
+setopt histfindnodups             # Do not display older duplicates in history search
