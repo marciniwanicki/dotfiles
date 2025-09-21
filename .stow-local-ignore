@@ -1,6 +1,6 @@
 .git
-bin/
-utils/
+bin
+utils
 LICENSE
 Makefile
 README.md
