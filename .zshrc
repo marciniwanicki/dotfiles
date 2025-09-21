@@ -114,5 +114,8 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 source ~/.exports
+source ~/.exports.local
 source ~/.aliases
+source ~/.aliases.local
 source ~/.functions
+source ~/.functions.local
