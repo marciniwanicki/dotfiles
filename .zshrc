@@ -145,3 +145,4 @@ if command -v tmux >/dev/null 2>&1; then
     tmux attach -t default || tmux new -s default
   fi
 fi
+tmux source-file ~/.tmux.conf
