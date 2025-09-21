@@ -18,10 +18,10 @@ then
   rm -rf ~/.dotfiles
   rm -f ~/.zshrc
 
+  echo "Your .dotfiles have been uninstalled"
+
   # Restart shell
   exec zsh
-
-  echo "Your .dotfiles have been uninstalled"
 
   cd $HOME
 fi
