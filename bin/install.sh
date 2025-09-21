@@ -46,9 +46,9 @@ function setup() {
   stow .
   popd
   
-  exec zsh
-
   echo "Installation complete!"
+
+  exec zsh
 }
 
 function clone() {
