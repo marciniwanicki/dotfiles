@@ -19,5 +19,12 @@ better if you spend some time reading the files and crafting new ones
 fitting best your own needs. I bet you will do it well and even learn some
 new shell tricks.
 
+## Installation
+
+```zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/marciniwanicki/dotfiles/main/bin/install.sh)"
+```
+
 ## License
+
 All files in this repository are released under the MIT license. [See LICENSE](https://github.com/marciniwanicki/dotfiles/blob/develop/LICENSE) for details.
