@@ -45,5 +45,11 @@ brew install ripgrep
 # Install fd for a simple, fast and user-friendly alternative to 'find'
 brew install fd
 
+# Install tree for displaying directory structures
+brew install tree
+
+# Install tmux for terminal multiplexing
+brew install tmux
+
 # Remove outdated versions from the cellar.
 brew cleanup
