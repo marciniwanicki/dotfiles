@@ -52,6 +52,9 @@ brew install ripgrep
 # Install fd for a simple, fast and user-friendly alternative to 'find'
 brew install fd
 
+# Install mc for a modern replacement for 'ls'
+brew install mc
+
 # Install tree for displaying directory structures
 brew install tree
 
