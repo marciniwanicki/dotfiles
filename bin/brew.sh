@@ -10,6 +10,9 @@ brew upgrade
 brew install --cask font-meslo-lg-nerd-font
 brew install --cask font-jetbrains-mono
 
+# Install iTerm2 for a better terminal experience
+brew install iterm2
+
 # Install starship for a fast shell prompt
 brew install starship
 

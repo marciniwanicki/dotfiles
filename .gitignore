@@ -2,3 +2,4 @@ vendor
 .aliases.local
 .exports.local
 .functions.local
+.config/iterm2
