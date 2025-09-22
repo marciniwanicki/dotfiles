@@ -77,7 +77,6 @@ function clone() {
 }
 
 function main() {
-  set -e
   clone
   setup
 }
