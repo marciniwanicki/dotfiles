@@ -18,6 +18,8 @@ casks=(
 
 # Formulae (CLI tools)
 formulae=(
+  python3                  # Install Python for scripting and development
+  go                       # Install Go for programming
   starship                 # Install starship for a fast shell prompt
   zsh-syntax-highlighting  # Install must-have Zsh extensions
   stow                     # Install stow for .dotfiles linking
@@ -35,6 +37,9 @@ formulae=(
   tree                     # Install tree for displaying directory structures
   tmux                     # Install tmux for terminal multiplexing
   neovim                   # Install neovim for a modern text editor
+  bat                      # Install bat for a cat clone with syntax highlighting and Git integration
+  tldr                     # Install tldr for simplified and community-driven man pages
+  speedtest-cli            # Install speedtest-cli for testing internet bandwidth
 )
 
 # Install missing casks only
