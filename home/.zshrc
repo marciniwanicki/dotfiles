@@ -88,8 +88,11 @@ source ~/.dotfiles-local/.functions
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Init brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Remove user prompt in agnoster theme
 prompt_context() {}
 
 # Run zsh syntax highlighting
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /opt/homebrew/Cellar/zsh-syntax-highlighting/0.7.1/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

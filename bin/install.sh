@@ -111,10 +111,12 @@ function setup() {
 }
 
 function clone() {
+  echo "Clone"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/marciniwanicki/dotfiles/master/bin/install.sh)"
 }
 
 function copy() {
+  echo "Copy"
   rm -rf ~/.dotfiles 2> /dev/null
   mkdir ~/.dotfiles
   cp -r .. ~/.dotfiles/

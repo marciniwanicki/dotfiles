@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+# bin
+export HOME_BIN="$HOME/bin"
+export PATH=$PATH:$HOME_BIN
+
 # Zsh
 export ZSH="$HOME/.dotfiles/oh-my-zsh";
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height 30%"
