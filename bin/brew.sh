@@ -6,63 +6,46 @@ brew update
 # Upgrade any already-installed formulae
 brew upgrade
 
-# Install fonts for iTerm2
-brew install --cask font-meslo-lg-nerd-font
-brew install --cask font-jetbrains-mono
+# Upgrade any already-installed casks
+brew upgrade --cask
 
-# Install iTerm2 for a better terminal experience
-brew install iterm2
+# Casks (GUI apps) and fonts
+casks=(
+  iterm2                     # Install iTerm2 for a better terminal experience
+  font-meslo-lg-nerd-font    # Install Meslo LG Nerd Font for terminal and editor
+  font-jetbrains-mono        # Install JetBrains Mono font for coding
+)
 
-# Install starship for a fast shell prompt
-brew install starship
+# Formulae (CLI tools)
+formulae=(
+  starship                 # Install starship for a fast shell prompt
+  zsh-syntax-highlighting  # Install must-have Zsh extensions
+  stow                     # Install stow for .dotfiles linking
+  zoxide                   # Install zoxide for easier navigation
+  fzf                      # Install fzf for better fuzzy finding
+  wget                     # Install wget for downloading files from the web
+  dpkg                     # Install dpkg for managing Debian packages
+  npm                      # Install npm for managing Node.js packages
+  cloc                     # Install cloc for counting lines of code
+  jq                       # Install jq for processing JSON
+  gh                       # Install gh for GitHub CLI
+  ripgrep                  # Install ripgrep for searching files
+  fd                       # Install fd for a simple, fast and user-friendly alternative to 'find'
+  mc                       # Install mc for a modern replacement for 'ls'
+  tree                     # Install tree for displaying directory structures
+  tmux                     # Install tmux for terminal multiplexing
+  neovim                   # Install neovim for a modern text editor
+)
 
-# Install must have zsh extensions
-brew install zsh-syntax-highlighting
+# Install missing casks only
+for pkg in "${casks[@]}"; do
+    brew list --cask "$pkg" >/dev/null 2>&1 || brew install --cask "$pkg"
+done
 
-# Install stow for .dotfiles linking
-brew install stow
+# Install missing formulae only
+for pkg in "${formulae[@]}"; do
+    brew list "$pkg" >/dev/null 2>&1 || brew install "$pkg"
+done
 
-# Install zoxide for easier navigation
-brew install zoxide
-
-# Install fzf for better fuzzy finding
-brew install fzf
-
-# Install wget for downloading files from the web
-brew install wget
-
-# Install dpkg for managing Debian packages
-brew install dpkg
-
-# Install npm for managing Node.js packages
-brew install npm
-
-# Install cloc for counting lines of code
-brew install cloc
-
-# Install jq for processing JSON
-brew install jq
-
-# Install gh for GitHub CLI
-brew install gh
-
-# Install ripgrep for searching files
-brew install ripgrep
-
-# Install fd for a simple, fast and user-friendly alternative to 'find'
-brew install fd
-
-# Install mc for a modern replacement for 'ls'
-brew install mc
-
-# Install tree for displaying directory structures
-brew install tree
-
-# Install tmux for terminal multiplexing
-brew install tmux
-
-# Install neovim for a modern text editor
-brew install neovim
-
-# Remove outdated versions from the cellar
+# Cleanup outdated versions
 brew cleanup

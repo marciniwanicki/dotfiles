@@ -21,6 +21,10 @@ pushd $HOME/.dotfiles
 
   # Update brew packages
   ./bin/brew.sh
+
+  # Relink stowed files
+  stow -D .
+  stow .
 popd
 
 exec zsh
