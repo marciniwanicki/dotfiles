@@ -9,6 +9,7 @@
 
  #aliases #functions #macos-setup
 ```
+[![Build Status](https://github.com/marciniwanicki/dotfiles/actions/workflows/main.yml/badge.svg)](https://github.com/marciniwanicki/dotfiles/actions/workflows/main.yml)
 
 This repository is a personal collection of dotfiles: a mix of popular, open-sourced tools and configs and my own random setup.  
 
