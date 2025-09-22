@@ -9,7 +9,7 @@
 
  #aliases #functions #macos-setup
 ```
-[![Build Status](https://github.com/marciniwanicki/dotfiles/actions/workflows/main.yml/badge.svg)](https://github.com/marciniwanicki/dotfiles/actions/workflows/main.yml)
+[![Build Status](https://github.com/marciniwanicki/dotfiles/actions/workflows/main.yml/badge.svg)](https://github.com/marciniwanicki/dotfiles/actions/workflows/main.yml) [![macOS](https://img.shields.io/badge/macOS-000000?logo=apple&logoColor=F0F0F0)](#) [![iTerm2](https://img.shields.io/badge/iTerm2-000000?logo=iterm2&logoColor=fff)](#) [![tmux](https://img.shields.io/badge/tmux-1BB91F?logo=tmux&logoColor=fff)](#)
 
 This repository is a personal collection of dotfiles: a mix of popular, open-sourced tools and configs and my own random setup.  
 
