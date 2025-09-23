@@ -1,8 +1,13 @@
 #!/usr/bin/env zsh -e
 
+casks=()
+local_casks=()
+formulae=()
+local_formulae=()
+
 # Load brew configurations
 source $HOME/.brew
-source $HOME/.brew.local
+[[ -f "$HOME/.brew.local" ]] && source "$HOME/.brew.local"
 
 # Make sure we’re using the latest Homebrew
 brew update

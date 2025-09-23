@@ -130,13 +130,16 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
 source ~/.keys
-source ~/.keys.local
+[[ -f "$HOME/.keys.local" ]] && source "$HOME/.keys.local"
+
 source ~/.exports
-source ~/.exports.local
+[[ -f "$HOME/.exports.local" ]] && source "$HOME/.exports.local"
+
 source ~/.aliases
-source ~/.aliases.local
+[[ -f "$HOME/.aliases.local" ]] && source "$HOME/.aliases.local"
+
 source ~/.functions
-source ~/.functions.local
+[[ -f "$HOME/.functions.local" ]] && source "$HOME/.functions.local"
 
 # Auto-start tmux if not already inside a tmux session
 if command -v tmux >/dev/null 2>&1; then
