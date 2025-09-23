@@ -14,6 +14,7 @@ casks=(
   iterm2                     # Install iTerm2 for a better terminal experience
   font-meslo-lg-nerd-font    # Install Meslo LG Nerd Font for terminal and editor
   font-jetbrains-mono        # Install JetBrains Mono font for coding
+  visual-studio-code         # Install VSCode for a powerful code editor
 )
 
 # Formulae (CLI tools)
