@@ -1,5 +1,6 @@
 vendor
 .aliases.local
+.brew.local
 .exports.local
 .functions.local
 .config/iterm2
