@@ -30,6 +30,7 @@ formulae=(
   dpkg                     # Install dpkg for managing Debian packages
   npm                      # Install npm for managing Node.js packages
   cloc                     # Install cloc for counting lines of code
+  scc                      # Install scc for counting lines of code (faster alternative to cloc)
   jq                       # Install jq for processing JSON
   gh                       # Install gh for GitHub CLI
   ripgrep                  # Install ripgrep for searching files
