@@ -53,8 +53,59 @@ function install_zsh_autosuggestions() {
   popd
 }
 
+function set_up_local_files() {
+  # Helper to create a file if it doesn't exist
+  create_file() {
+    local file="$1"
+    local content="$2"
+
+    if [[ ! -f "$file" ]]; then
+      echo "$content" > "$file"
+    fi
+  }
+
+  # .brew.local template
+  local brew_content='#!/usr/bin/env zsh -e
+
+# Local casks (GUI apps) and fonts
+local_casks=(
+
+)
+
+# Local formulae (CLI tools)
+formulae=(
+
+)
+'
+
+  # .aliases.local and .functions.local template
+  local common_content='#!/usr/bin/env zsh
+
+source $HOME/.dotfiles/utils/common
+'
+
+  # .keys.local template
+  local keys_content='#!/usr/bin/env zsh
+
+source $HOME/.dotfiles/utils/common
+source $HOME/.dotfiles/vendor/fzf-git.sh/fzf-git.sh
+'
+
+  # .exports.local template
+  local exports_content='#!/usr/bin/env zsh -e
+'
+
+  # Create the local files
+  create_file "$HOME/.brew.local" "$brew_content"
+  create_file "$HOME/.aliases.local" "$common_content"
+  create_file "$HOME/.functions.local" "$common_content"
+  create_file "$HOME/.keys.local" "$keys_content"
+  create_file "$HOME/.exports.local" "$exports_content"
+}
+
 function setup() {
   pushd $HOME/.dotfiles/bin
+  set_up_local_files
   install_homebrew
   install_oh_my_zsh
   install_brew_packages
