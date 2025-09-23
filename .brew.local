@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh -e
+
+# Local casks (GUI apps) and fonts
+local_casks=(
+
+)
+
+# Local formulae (CLI tools)
+local_formulae=(
+
+)

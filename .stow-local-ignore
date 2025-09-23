@@ -1,4 +1,6 @@
 .git
+.brew
+.brew.local
 .keys
 .keys.local
 bin
