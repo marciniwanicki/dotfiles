@@ -115,6 +115,7 @@ function setup() {
   popd
   
   pushd $HOME/.dotfiles
+  stow -D .
   stow .
   popd
   
