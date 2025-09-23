@@ -79,13 +79,13 @@ local_formulae=(
 '
 
   # .aliases.local and .functions.local template
-  local common_content='#!/usr/bin/env zsh
+  local common_content='#!/usr/bin/env zsh -e
 
 source $HOME/.dotfiles/utils/common
 '
 
   # .keys.local template
-  local keys_content='#!/usr/bin/env zsh
+  local keys_content='#!/usr/bin/env zsh -e
 
 source $HOME/.dotfiles/utils/common
 source $HOME/.dotfiles/vendor/fzf-git.sh/fzf-git.sh
