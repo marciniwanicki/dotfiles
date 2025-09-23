@@ -73,7 +73,7 @@ local_casks=(
 )
 
 # Local formulae (CLI tools)
-formulae=(
+local_formulae=(
 
 )
 '
