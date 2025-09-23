@@ -76,8 +76,8 @@ function .echo_version() {
 function .dotfiles_doc_print_all() {
   echo_on=1
   .echo_version
-  source $HOME/.dotfiles/.keys
-  source $HOME/.dotfiles/.keys.local
+  source $HOME/.keys
+  source $HOME/.keys.local
   source $HOME/.aliases
   source $HOME/.aliases.local
   source $HOME/.functions

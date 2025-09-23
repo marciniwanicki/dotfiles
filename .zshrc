@@ -129,9 +129,8 @@ source ~/.dotfiles/vendor/fzf-tab/fzf-tab.plugin.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
-source ~/.dotfiles/.keys
-source ~/.dotfiles/.keys.local
-
+source ~/.keys
+source ~/.keys.local
 source ~/.exports
 source ~/.exports.local
 source ~/.aliases
