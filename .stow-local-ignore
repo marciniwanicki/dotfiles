@@ -1,8 +1,5 @@
 .git
-.brew
-.brew.local
-.keys
-.keys.local
+.gitignore 
 bin
 utils
 vendor
