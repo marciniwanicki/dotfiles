@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh -e
 
 # Load brew configurations
-source $HOME/.dotfiles/.brew
-source $HOME/.dotfiles/.brew.local
+source $HOME/.brew
+source $HOME/.brew.local
 
 # Make sure we’re using the latest Homebrew
 brew update
