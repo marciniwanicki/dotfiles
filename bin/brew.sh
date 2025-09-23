@@ -37,11 +37,14 @@ formulae=(
   fd                       # Install fd for a simple, fast and user-friendly alternative to 'find'
   mc                       # Install mc for a modern replacement for 'ls'
   tree                     # Install tree for displaying directory structures
+  tre                      # Install tre for displaying directory structures
   tmux                     # Install tmux for terminal multiplexing
   neovim                   # Install neovim for a modern text editor
   bat                      # Install bat for a cat clone with syntax highlighting and Git integration
   tldr                     # Install tldr for simplified and community-driven man pages
   speedtest-cli            # Install speedtest-cli for testing internet bandwidth
+  duf                      # Install duf for a better 'df' alternative
+  dua-cli                  # Install dua-cli for disk usage analysis (@piotrwach is a contributor)
 )
 
 # Install missing casks only
