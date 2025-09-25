@@ -17,9 +17,9 @@ source $HOME/.dotfiles/vendor/fzf-git.sh/fzf-git.sh
 .section_end
 
 .section "Navigation key bindings"
-.key "Ctrl-T" "fuzzy file search"
-.key "Ctrl-R" "fuzzy search through your command history"
-.key "Alt-C" "change directory interactively (no alias)"
+.key "CTRL-T" "fuzzy file search"
+.key "CTRL-R" "fuzzy search through your command history"
+.key "ALT-C" "change directory interactively (no alias)"
 .section_end
 
 .section "tmux Basics"
