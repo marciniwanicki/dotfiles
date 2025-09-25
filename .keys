@@ -21,3 +21,41 @@ source $HOME/.dotfiles/vendor/fzf-git.sh/fzf-git.sh
 .key "Ctrl-R" "fuzzy search through your command history"
 .key "Alt-C" "change directory interactively (no alias)"
 .section_end
+
+.section "tmux Basics"
+.key "CTRL-A d" "detach from session"
+.key "CTRL-A $" "rename current session"
+.key "CTRL-A s" "list sessions"
+.key "CTRL-A :" "command prompt"
+.section_end
+
+.section "tmux Windows"
+.key "CTRL-A c" "create new window"
+.key "CTRL-A n" "next window"
+.key "CTRL-A p" "previous window"
+.key "CTRL-A w" "list windows"
+.key "CTRL-A ," "rename window"
+.key "CTRL-A &" "close current window"
+.section_end
+
+.section "tmux Panes"
+.key "CTRL-A %" "split pane vertically"
+.key "CTRL-A \"" "split pane horizontally"
+.key "CTRL-A o" "cycle through panes"
+.key "CTRL-A ←/→/↑/↓" "move between panes"
+.key "CTRL-A x" "kill current pane"
+.key "CTRL-A :resize-pane -L" "resize pane left"
+.key "CTRL-A :resize-pane -R" "resize pane right"
+.key "CTRL-A :resize-pane -U" "resize pane up"
+.key "CTRL-A :resize-pane -D" "resize pane down"
+.section_end
+
+.section "tmux Copy & Scroll"
+.key "CTRL-A [" "enter copy mode (scroll)"
+.key "CTRL-A ]" "paste buffer"
+.section_end
+
+.section "tmux Advanced"
+.key "CTRL-A :setw synchronize-panes on" "broadcast input to all panes"
+.section_end
+
