@@ -35,6 +35,10 @@ function install_brew_packages() {
   ./brew.sh
 }
 
+function install_mise() {
+  curl "https://mise.run" | sh
+}
+
 function install_fzf_git() {
   pushd $HOME/.dotfiles/vendor
   git clone https://github.com/junegunn/fzf-git.sh.git
@@ -109,6 +113,7 @@ function setup() {
   install_homebrew
   install_oh_my_zsh
   install_brew_packages
+  install_mise
   install_fzf_git
   install_fzf_tab
   install_zsh_autosuggestions

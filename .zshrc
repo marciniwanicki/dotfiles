@@ -112,6 +112,9 @@ eval "$(starship init zsh)"
 # Set up zoxide
 eval "$(zoxide init zsh --cmd cd)"
 
+# Set up mise
+eval "$(/Users/marcin/.local/bin/mise activate zsh)"
+
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
