@@ -1,3 +1,4 @@
+.DS_Store
 vendor
 .aliases.local
 .brew.local
