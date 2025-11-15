@@ -109,9 +109,6 @@ fi
 # Set up starship prompt
 eval "$(starship init zsh)"
 
-# Set up zoxide
-eval "$(zoxide init zsh --cmd cd)"
-
 # Set up mise
 eval "$(/Users/marcin/.local/bin/mise activate zsh)"
 
@@ -150,4 +147,8 @@ if command -v tmux >/dev/null 2>&1; then
     tmux attach -t default || tmux new -s default
   fi
 fi
+
 tmux source-file ~/.tmux.conf
+
+# Set up zoxide
+eval "$(zoxide init zsh --cmd cd)"
