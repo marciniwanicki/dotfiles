@@ -148,7 +148,10 @@ if command -v tmux >/dev/null 2>&1; then
   fi
 fi
 
-tmux source-file ~/.tmux.conf
+# Reload tmux config if inside tmux
+if [[ -n "$TMUX" ]]; then
+  tmux source-file ~/.tmux.conf
+fi
 
-# Set up zoxide
+# Set up zoxide (MUST be last)
 eval "$(zoxide init zsh --cmd cd)"
