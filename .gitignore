@@ -5,3 +5,4 @@ vendor
 .exports.local
 .functions.local
 .config/iterm2
+.config/sops
