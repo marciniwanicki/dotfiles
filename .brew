@@ -36,4 +36,5 @@ formulae=(
   speedtest-cli            # Install speedtest-cli for testing internet bandwidth
   duf                      # Install duf for a better 'df' alternative
   dua-cli                  # Install dua-cli for disk usage analysis (@piotrwach is a contributor)
+  sops                     # Install sops for managing secrets
 )
