@@ -32,7 +32,9 @@ function install_oh_my_zsh {
 }
 
 function install_brew_packages() {
+  pushd $HOME/.dotfiles/bin
   ./brew.sh
+  popd
 }
 
 function install_mise() {
