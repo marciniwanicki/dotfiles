@@ -6,7 +6,7 @@ formulae=()
 local_formulae=()
 
 # Load brew configurations
-[[ -f "$HOME/.brew" ]] && source "$HOME/.brew"
+source "$HOME/.dotfiles/.brew"
 [[ -f "$HOME/.brew.local" ]] && source "$HOME/.brew.local"
 
 # Make sure we’re using the latest Homebrew
