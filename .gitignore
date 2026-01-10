@@ -6,3 +6,6 @@ vendor
 .functions.local
 .config/iterm2
 .config/sops
+.config/gh
+.config/git
+.config/swiftpm
