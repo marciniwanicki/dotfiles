@@ -43,6 +43,97 @@ style = "bold red"
 symbol = "✘ "
 disabled = false
 
+# Language modules - clean text style
+[swift]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "swift "
+style = "overlay0"
+
+[python]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "python "
+style = "overlay0"
+
+[nodejs]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "node "
+style = "overlay0"
+
+[golang]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "go "
+style = "overlay0"
+
+[rust]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "rust "
+style = "overlay0"
+
+[ruby]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "ruby "
+style = "overlay0"
+
+[java]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "java "
+style = "overlay0"
+
+[kotlin]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "kotlin "
+style = "overlay0"
+
+[lua]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "lua "
+style = "overlay0"
+
+[elixir]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "elixir "
+style = "overlay0"
+
+[elm]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "elm "
+style = "overlay0"
+
+[haskell]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "haskell "
+style = "overlay0"
+
+[julia]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "julia "
+style = "overlay0"
+
+[nim]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "nim "
+style = "overlay0"
+
+[perl]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "perl "
+style = "overlay0"
+
+[php]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "php "
+style = "overlay0"
+
+[scala]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "scala "
+style = "overlay0"
+
+[zig]
+format = "[(\\($symbol$version\\))]($style) "
+symbol = "zig "
+style = "overlay0"
+
 # Catppuccin Mocha palette
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
