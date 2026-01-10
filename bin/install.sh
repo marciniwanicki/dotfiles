@@ -59,6 +59,12 @@ function install_zsh_autosuggestions() {
   popd
 }
 
+function install_catppuccin_tmux() {
+  pushd $HOME/.dotfiles/vendor
+  git clone -b v2.1.3 https://github.com/catppuccin/tmux.git catppuccin-tmux
+  popd
+}
+
 function set_up_local_files() {
   # Helper to create a file if it doesn't exist
   create_file() {
@@ -119,6 +125,7 @@ function setup() {
   install_fzf_git
   install_fzf_tab
   install_zsh_autosuggestions
+  install_catppuccin_tmux
   popd
   
   pushd $HOME/.dotfiles

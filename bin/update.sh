@@ -19,6 +19,11 @@ pushd $HOME/.dotfiles
     git pull
   popd
 
+  # Update catppuccin-tmux
+  pushd vendor/catppuccin-tmux
+    git pull
+  popd
+
   # Update brew packages
   ./bin/brew.sh
 
