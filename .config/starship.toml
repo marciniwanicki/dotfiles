@@ -22,9 +22,21 @@ truncation_length = 0       # don’t cut off after N segments
 truncate_to_repo = false    # don’t stop at the repo root
 fish_style_pwd_dir_length = 0  # don’t shorten each segment
 
+[git_branch]
+style = "green"
+
 [git_status]
-stashed = "="
-behind = "↓"
+style = "yellow"
+format = '[$all_status$ahead_behind](yellow) '
+stashed = "stashed "
+behind = "behind "
+ahead = "ahead "
+diverged = "diverged "
+untracked = "untracked "
+modified = "modified "
+staged = "staged "
+renamed = "renamed "
+deleted = "deleted "
 
 [status]
 style = "bold red"
