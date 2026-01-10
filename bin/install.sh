@@ -4,6 +4,25 @@ set -e          # Exit immediately on error
 set -o pipefail # Exit on pipe failures
 
 function install_homebrew() {
+  # Check if brew is already installed
+  if command -v brew &>/dev/null; then
+    echo "Homebrew already installed, skipping..."
+    return
+  fi
+
+  if [[ -f /opt/homebrew/bin/brew ]]; then
+    echo "Homebrew found at /opt/homebrew, adding to PATH..."
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    return
+  fi
+
+  if [[ -f /usr/local/bin/brew ]]; then
+    echo "Homebrew found at /usr/local, adding to PATH..."
+    eval "$(/usr/local/bin/brew shellenv)"
+    return
+  fi
+
+  # Install Homebrew
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
   # Add brew to PATH for the current session
