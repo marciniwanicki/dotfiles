@@ -4,7 +4,7 @@ vendor
 .brew.local
 .exports.local
 .functions.local
-.config/iterm2
+.config/iterm2/AppSupport
 .config/sops
 .config/gh
 .config/git
