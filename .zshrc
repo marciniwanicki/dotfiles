@@ -110,7 +110,7 @@ fi
 eval "$(starship init zsh)"
 
 # Set up mise
-eval "$(/Users/marcin/.local/bin/mise activate zsh)"
+eval "$($HOME/.local/bin/mise activate zsh)"
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
