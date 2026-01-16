@@ -3,3 +3,4 @@
 export XDG_CONFIG_HOME="$HOME/.config"
 export COLORTERM=truecolor
 export EDITOR="nvim"
+export _ZO_DOCTOR=0

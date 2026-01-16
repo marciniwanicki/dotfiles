@@ -43,96 +43,60 @@ style = "bold red"
 symbol = "✘ "
 disabled = false
 
-# Language modules - clean text style
+# Language modules - disabled for performance
 [swift]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "swift "
-style = "overlay0"
+disabled = true
 
 [python]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "python "
-style = "overlay0"
+disabled = true
 
 [nodejs]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "node "
-style = "overlay0"
+disabled = true
 
 [golang]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "go "
-style = "overlay0"
+disabled = true
 
 [rust]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "rust "
-style = "overlay0"
+disabled = true
 
 [ruby]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "ruby "
-style = "overlay0"
+disabled = true
 
 [java]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "java "
-style = "overlay0"
+disabled = true
 
 [kotlin]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "kotlin "
-style = "overlay0"
+disabled = true
 
 [lua]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "lua "
-style = "overlay0"
+disabled = true
 
 [elixir]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "elixir "
-style = "overlay0"
+disabled = true
 
 [elm]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "elm "
-style = "overlay0"
+disabled = true
 
 [haskell]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "haskell "
-style = "overlay0"
+disabled = true
 
 [julia]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "julia "
-style = "overlay0"
+disabled = true
 
 [nim]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "nim "
-style = "overlay0"
+disabled = true
 
 [perl]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "perl "
-style = "overlay0"
+disabled = true
 
 [php]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "php "
-style = "overlay0"
+disabled = true
 
 [scala]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "scala "
-style = "overlay0"
+disabled = true
 
 [zig]
-format = "[(\\($symbol$version\\))]($style) "
-symbol = "zig "
-style = "overlay0"
+disabled = true
 
 # Catppuccin Mocha palette
 [palettes.catppuccin_mocha]
