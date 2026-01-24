@@ -1,0 +1,24 @@
+# Catppuccin Mocha theme with darker background (Crust)
+# Matching iTerm2 configuration
+
+# Use Catppuccin Mocha as base theme
+theme = catppuccin-mocha
+
+# Override background to use darker "Crust" color (matching iTerm)
+background = #11111b
+
+# Cursor
+cursor-color = #f5e0dc
+cursor-text = #1e1e2e
+
+# Selection
+selection-background = #585b70
+selection-foreground = #cdd6f4
+
+# Font settings (matching iTerm's MesloLGS NF)
+font-family = MesloLGS NF
+font-size = 13
+
+# Window
+window-padding-x = 4
+window-padding-y = 4
