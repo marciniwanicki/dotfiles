@@ -4,7 +4,7 @@
 # Use Catppuccin Mocha as base theme
 theme = catppuccin-mocha
 
-# Override background to use darker "Crust" color (matching iTerm)
+# Override background to use darker "Crust" color (matching tmux bar)
 background = #11111b
 
 # Cursor
