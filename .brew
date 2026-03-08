@@ -39,4 +39,5 @@ formulae=(
   sops                     # Install sops for managing secrets
   age                      # Install age for simple, modern and secure encryption
   ffmpeg                   # Install ffmpeg for handling multimedia data
+  glow                     # Install glow for markdown rendering
 )
