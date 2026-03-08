@@ -88,6 +88,12 @@ function install_zsh_autosuggestions() {
   popd
 }
 
+function install_zsh_completions() {
+  pushd $HOME/.dotfiles/vendor
+  git clone https://github.com/zsh-users/zsh-completions.git
+  popd
+}
+
 function install_catppuccin_tmux() {
   pushd $HOME/.dotfiles/vendor
   git clone -b v2.1.3 https://github.com/catppuccin/tmux.git catppuccin-tmux
@@ -154,6 +160,7 @@ function setup() {
   install_fzf_git
   install_fzf_tab
   install_zsh_autosuggestions
+  install_zsh_completions
   install_catppuccin_tmux
   popd
   

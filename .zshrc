@@ -121,6 +121,9 @@ source ~/.dotfiles/vendor/fzf-git.sh/fzf-git.sh
 # Set up zsh-autosuggestions
 source ~/.dotfiles/vendor/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+# Set up zsh-completions
+source ~/.dotfiles/vendor/zsh-completions/zsh-completions.plugin.zsh
+
 # Set up fzf-tab
 autoload -U compinit; compinit
 source ~/.dotfiles/vendor/fzf-tab/fzf-tab.plugin.zsh
